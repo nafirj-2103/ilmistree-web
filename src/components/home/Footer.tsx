@@ -18,7 +18,7 @@ export function Footer() {
           {/* Logo and Tagline */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/logo-full.jpg" alt="Ilmistree" className="h-12 w-auto brightness-0 invert" />
+              <img src="/logo-full.png" alt="Ilmistree" className="h-12 w-auto" />
             </div>
             <p className="text-white/80 leading-relaxed">
               Where Knowledge Grows
