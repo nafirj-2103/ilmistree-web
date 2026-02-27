@@ -20,7 +20,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="w-full py-24 bg-[#D32F2F]">
+    <section id="contact" className="w-full py-24 bg-[#cd141d]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

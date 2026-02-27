@@ -1,4 +1,5 @@
 import { Header } from './home/Header';
+import { SecondaryNavbar } from './home/SecondaryNavbar';
 import { HeroSection } from './home/HeroSection';
 import { CoursesSection } from './home/CoursesSection';
 import { FeaturesSection } from './home/FeaturesSection';
@@ -11,6 +12,7 @@ function Home() {
   return (
     <div className="w-full min-h-screen bg-white">
       <Header />
+      <SecondaryNavbar />
       <HeroSection />
       <CoursesSection />
       <FeaturesSection />

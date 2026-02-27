@@ -12,21 +12,21 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#D32F2F] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="w-full bg-[#81020c] text-white">
+      <div className="max-w-7xl mx-auto px-[30px] py-[100px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-30">
           {/* Logo and Tagline */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/logo-full.png" alt="Ilmistree" className="h-12 w-auto" />
+            <div className="flex items-center gap-3 mb-4 mt-[-70px]">
+              <img src="/full_ilmistree_horizontal_glow-3c.png" alt="Ilmistree" className="h-25 w-50" />
             </div>
             <p className="text-white/80 leading-relaxed">
-              Where Knowledge Grows
+              {/*Where Knowledge Grows*/}
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="mt-[20px]">
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
@@ -65,7 +65,7 @@ export function Footer() {
           </div>
 
           {/* Support */}
-          <div>
+          <div className="mt-[20px]">
             <h3 className="text-lg font-bold mb-4">Support</h3>
             <ul className="space-y-3">
               <li>
@@ -92,7 +92,7 @@ export function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div>
+          <div className="mt-[20px]">
             <h3 className="text-lg font-bold mb-4">Newsletter</h3>
             <p className="text-white/80 mb-4">Subscribe to get updates</p>
             <div className="flex gap-2">
@@ -111,9 +111,9 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-white/20 pt-8 text-center">
+        <div className="border-t border-white/20 pt-8 text-center mt-[100px]">
           <p className="text-white/80">
-            © 2025 Ilmistree. All rights reserved.
+            © 2026 Ilmistree. All rights reserved.
           </p>
         </div>
       </div>
