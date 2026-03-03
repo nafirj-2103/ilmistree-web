@@ -10,7 +10,7 @@ export function Header() {
     <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-20 h-25 flex items-center justify-between pt-1">
         
-          {/* Logo */}
+          {/* Logo */}  
           <div className="flex items-center justify-between gap-3 pt-50">
             <img src="/full ilmistree horizontal transparency.png" alt="Ilmistree" className="h-[68px] w-auto object-contain"/>
           </div>
@@ -68,7 +68,7 @@ export function Header() {
 
           {/* CTA Button */}
           <Button 
-            className="bg-[#D32F2F] hover:bg-[#81020c] text-white px-6 py-2 rounded-full font-semibold transition-all hover:scale-105"
+            className="bg-[#D32F2F] hover:bg-[#81020] text-white px-6 py-2 rounded-full font-semibold transition-all hover:scale-105"
             onClick={() => scrollToSection('courses')}
           >
             LOGIN

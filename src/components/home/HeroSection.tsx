@@ -56,8 +56,8 @@ export function HeroSection() {
         {/* Hero Title */}
         <div className="mb-16 max-w-3xl">
           {/* Welcome Heading */}
-          <div className="mb-4">
-            <p className="text-lg text-gray-900 font-bold mb-1">
+          <div className="mb-1">
+            <p className="text-lg text-gray-900 font-bold mb-1 mt-[-50px]">
               Welcome to 
               <span className="text-6xl font-bold text-[#cd141d]">ILMISTREE</span>
             </p>
