@@ -1,14 +1,14 @@
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { ArrowRight, Clock, Star, Users } from 'lucide-react';
+import { CourseCard } from './CourseCard';
 
 const courses = [
   {
     id: 1,
-    category: 'Technology',
-    title: 'Computer Science Fundamentals',
+    category: 'New Syllabus',
+    title: '9th Class Physics Book PDF',
     description: 'Master the basics of programming, algorithms, and data structures',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80',
+    image: '',
     duration: '12 weeks',
     rating: 4.8,
     students: '25K'
@@ -79,52 +79,16 @@ export function CoursesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {courses.map((course) => (
-            <Card 
+          {courses.map((course, idx) => (
+            // toggle `useModel` to switch between the static image and
+            // the 3D book canvas.  here we only enable the model for the
+            // first item as a demonstration, but you can apply it
+            // to every card or control it with a feature flag.
+            <CourseCard
               key={course.id}
-              className="overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group"
-            >
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={course.image} 
-                  alt={course.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <div className="inline-block px-3 py-1 bg-red-50 text-[#D32F2F] text-sm font-semibold rounded-full mb-3">
-                  {course.category}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  {course.title}
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">
-                  {course.description}
-                </p>
-                
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center gap-1">
-                    <Clock className="w-4 h-4" />
-                    {course.duration}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Star className="w-4 h-4 fill-[#D32F2F] text-[#D32F2F]" />
-                    {course.rating}
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Users className="w-4 h-4" />
-                    {course.students}
-                  </div>
-                </div>
-
-                <Button 
-                  className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 group-hover:scale-105"
-                >
-                  Enroll Now
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </div>
-            </Card>
+              course={course}
+              useModel={idx === 0}
+            />
           ))}
         </div>
 
