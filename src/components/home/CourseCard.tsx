@@ -1,29 +1,9 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ArrowRight, Clock, Star, Users } from 'lucide-react';
+import { ArrowRight, Clock, Star, Download } from 'lucide-react';
 import { BookCanvas } from './BookCanvas';
-
-export interface Course {
-  id: number;
-  category: string;
-  title: string;
-  description: string;
-  image: string;
-  duration: string;
-  rating: number;
-  students: string;
-}
-
-export interface CourseCardProps {
-  course: Course;
-  /**
-   * When `true` the 3D book canvas is shown in place of the static
-   * image.  Useful for toggling or feature‑flagging while you roll it
-   * out gradually.
-   */
-  useModel?: boolean;
-}
+import { Course, CourseCardProps } from './types'; // or wherever interface is
 
 export function CourseCard({ course, useModel = false }: CourseCardProps) {
   // pointer coordinates normalized to [-1,1] where (0,0) is center
@@ -31,7 +11,7 @@ export function CourseCard({ course, useModel = false }: CourseCardProps) {
 
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!useModel) return;
-    const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
+    const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
     const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
     setPointer({ x, y });
@@ -49,10 +29,10 @@ export function CourseCard({ course, useModel = false }: CourseCardProps) {
     >
       <div className="overflow-hidden relative" style={{ height: '220px' }}>
         {useModel ? (
-          <BookCanvas pointer={pointer} />
+          <BookCanvas pointer={pointer} cover={course.cover} />
         ) : (
           <img
-            src={course.image}
+            src={course.cover}
             alt={course.title}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
@@ -76,8 +56,8 @@ export function CourseCard({ course, useModel = false }: CourseCardProps) {
             {course.rating}
           </div>
           <div className="flex items-center gap-1">
-            <Users className="w-4 h-4" />
-            {course.students}
+            <Download className="w-4 h-4" />
+            {course.downloads}
           </div>
         </div>
 

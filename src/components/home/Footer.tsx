@@ -113,7 +113,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="border-t border-white/20 pt-8 text-center mt-[100px]">
           <p className="text-white/80">
-            © 2026 Ilmistree. All rights reserved.
+            © 2026 Ilmistree | All rights reserved 
           </p>
         </div>
       </div>

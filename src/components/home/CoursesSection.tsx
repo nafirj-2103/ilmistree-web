@@ -1,68 +1,102 @@
+import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Clock, Star, Users } from 'lucide-react';
+import { ArrowRight, Clock, Star, Download } from 'lucide-react';
 import { CourseCard } from './CourseCard';
+import { Course } from './types';
 
-const courses = [
+const courses: Course[] = [
   {
     id: 1,
     category: 'New Syllabus',
-    title: '9th Class Physics Book PDF',
-    description: 'Master the basics of programming, algorithms, and data structures',
-    image: '',
-    duration: '12 weeks',
-    rating: 4.8,
-    students: '25K'
+    title: '9 Physics Text Book PDF',
+    description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
+    cover: '/models/textures/physics.jpg',   
+    duration: '15 March 2026',
+    rating: 4.5,
+    downloads: '7K'
   },
   {
     id: 2,
-    category: 'Mathematics',
-    title: 'Advanced Mathematics',
-    description: 'Explore calculus, linear algebra, and applied mathematics',
-    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80',
-    duration: '10 weeks',
-    rating: 4.9,
-    students: '18K'
+    category: 'New Syllabus',
+    title: '9 Turjuma-Tul-Quran Text Book PDF',
+    description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
+    cover: '/models/textures/Quran.jpg',
+    duration: '15 March 2026',
+    rating: 4.2,
+    downloads: '3K'
   },
   {
     id: 3,
-    category: 'Science',
-    title: 'Science & Research Methods',
-    description: 'Learn scientific methodology and laboratory techniques',
-    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80',
-    duration: '8 weeks',
+    category: 'New Syllabus',
+     title: '9 Islamiat Text Book PDF',
+    description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
+    cover: '/models/textures/islamiat.jpg',
+    duration: '15 March 2026',
     rating: 4.7,
-    students: '15K'
+    downloads: '6K'
   },
-  {
-    id: 4,
-    category: 'Languages',
-    title: 'Language Learning',
-    description: 'Master new languages with immersive learning techniques',
-    image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80',
-    duration: '16 weeks',
+  
+   {
+    id:4,
+    category: 'New Syllabus',
+    title: '9 Mathematics Text Book PDF',
+    description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
+    cover: '/models/textures/MATH.jpg',
+    duration: '15 March 2026',
     rating: 4.8,
-    students: '30K'
+    downloads: '12K'
+  },
+   {
+    id:5,
+    category: 'New Syllabus',
+    title: '9 Urdu Qawaid-o-Insha T.Book PDF',
+    description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
+    cover: '/models/textures/INSHA.jpg',
+    duration: '15 March 2026',
+    rating: 4.4,
+    downloads: '3K'
   },
   {
-    id: 5,
-    category: 'Business',
-    title: 'Business & Technology',
-    description: 'Navigate the intersection of business strategy and innovation',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
-    duration: '14 weeks',
-    rating: 4.6,
-    students: '22K'
-  },
-  {
-    id: 6,
-    category: 'Arts',
-    title: 'Creative Arts & Design',
-    description: 'Unleash your creativity through visual arts and design principles',
-    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&q=80',
-    duration: '12 weeks',
+    id:6,
+    category: 'New Syllabus',
+     title: '9 Biology Text Book PDF',
+    description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
+    cover: '/models/textures/BIOLOGY.jpg',
+    duration: '15 March 2026',
     rating: 4.9,
-    students: '20K'
+    downloads: '15K'
+  },
+  {
+    id:7,
+    category: 'New Syllabus',
+    title: '9 Computer Science Text Book PDF',
+    description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
+    cover: '/models/textures/COMPUTER.jpg',
+    duration: '15 March 2026',
+    rating: 4.8,
+    downloads: '13K'
+  },
+  {
+    id:8,
+    category: 'New Syllabus',
+    title: '9 English Grammar Text Book PDF',
+    description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
+    cover: '/models/textures/ENG GRAMER.jpg',
+    duration: '15 March 2026',
+    rating: 4.7,
+    downloads: '5K'
+  },
+   {
+    id:9,
+    category: 'New Syllabus',
+    title: '9 Urdu Text Book PDF',
+    description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
+    cover: '/models/textures/URDU.jpg',
+    duration: '15 March 2026',
+    rating: 4.9,
+    downloads: '15K'
   }
+  // add more courses here
 ];
 
 export function CoursesSection() {
@@ -80,14 +114,10 @@ export function CoursesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {courses.map((course, idx) => (
-            // toggle `useModel` to switch between the static image and
-            // the 3D book canvas.  here we only enable the model for the
-            // first item as a demonstration, but you can apply it
-            // to every card or control it with a feature flag.
             <CourseCard
               key={course.id}
               course={course}
-              useModel={idx === 0}
+              useModel={true}  // first card 3D book, baaki static images
             />
           ))}
         </div>
