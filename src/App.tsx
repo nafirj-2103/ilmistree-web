@@ -1,6 +1,8 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home";
+
+const BookDetailPage = lazy(() => import("./components/book/BookDetailPage"));
 
 function App() {
   return (
@@ -8,6 +10,7 @@ function App() {
       <>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/book/:slug" element={<BookDetailPage />} />
         </Routes>
       </>
     </Suspense>

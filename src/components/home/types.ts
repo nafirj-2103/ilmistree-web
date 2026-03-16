@@ -8,6 +8,7 @@ export interface Course {
   duration: string;
   rating: number;
   downloads: string;   // yaha students ki jagah downloads
+  slug: string;        // URL slug for book detail page
 }
 
 export interface CourseCardProps {

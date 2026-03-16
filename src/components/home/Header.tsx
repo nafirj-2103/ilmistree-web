@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import { Search } from "lucide-react";
 
 export function Header() {
   const scrollToSection = (id: string) => {
@@ -17,8 +16,6 @@ export function Header() {
           </div>
           {/* Right Section */}
           <div className="hidden md:flex items-center gap-8">
-
-
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center gap-8">
@@ -58,19 +55,12 @@ export function Header() {
             >
               Contact
             </button>
-             <Button 
-            onClick={() => scrollToSection('about')}
-            variant="outline"
-            className="flex items-center gap-2 px-4 py-1 bg-white border rounded-full text-gray-700 hover:bg-black hover:text-white hover:border-black  duration-300 shadow-md hover:shadow-black  text-base font-semibold transition-all hover:scale-105"
-          >
-             <Search className="w-5 h-5" />
-             Search
-          </Button>
+
           </nav>
 
           {/* CTA Button */}
           <Button 
-            className="bg-[#D32F2F] hover:bg-[#810202] text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 shadow-md  hover:scale-105 hover:shadow-[0_0_25px_rgba(238,28,37,0.75)]"
+            className="bg-[#D32F2F] hover:bg-[#810202] text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 shadow-md hover:scale-105 hover:shadow-[0_0_25px_rgba(238,28,37,0.75)]"
             onClick={() => scrollToSection('courses')}
           >
             LOGIN

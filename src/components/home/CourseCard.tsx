@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, Clock, Star, Download } from 'lucide-react';
@@ -6,6 +7,7 @@ import { BookCanvas } from './BookCanvas';
 import { Course, CourseCardProps } from './types'; // or wherever interface is
 
 export function CourseCard({ course, useModel = false }: CourseCardProps) {
+  const navigate = useNavigate();
   // pointer coordinates normalized to [-1,1] where (0,0) is center
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
@@ -62,9 +64,10 @@ export function CourseCard({ course, useModel = false }: CourseCardProps) {
         </div>
 
         <Button
+          onClick={() => navigate(`/book/${course.slug}`)}
           className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 group-hover:scale-105"
         >
-          Enroll Now
+          View & Download
           <ArrowRight className="w-4 h-4" />
         </Button>
       </div>
