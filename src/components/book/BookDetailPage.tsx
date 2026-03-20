@@ -1,8 +1,10 @@
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
 import { bookDetails } from './bookData';
+import { BookSlidePanel } from './BookSlidePanel';
 import {
   ArrowLeft,
   BookOpen,
@@ -16,10 +18,11 @@ import {
   ChevronRight,
 } from 'lucide-react';
 
-export default function BookDetailPage() {
+const BookDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const book = slug ? bookDetails[slug] : undefined;
+  const [sliderOpen, setSliderOpen] = useState(false);
 
   if (!book) {
     return (
@@ -146,6 +149,9 @@ export default function BookDetailPage() {
                     </Button>
                     <Button
                       variant="outline"
+                      onClick={() => {
+                        setSliderOpen(true);
+                      }}
                       className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-all"
                     >
                       <Download className="w-4 h-4" />
@@ -337,6 +343,14 @@ export default function BookDetailPage() {
       </div>
 
       <Footer />
+
+      <BookSlidePanel
+        isOpen={sliderOpen}
+        onClose={() => setSliderOpen(false)}
+        slug={book.slug}
+      />
     </div>
   );
-}
+};
+
+export default BookDetailPage;

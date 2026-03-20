@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Clock, Star, Download, BookOpen, GraduationCap } from 'lucide-react';
 import { CourseCard } from './CourseCard';
 import { Course } from './types';
+import { BookSlidePanel } from '../book/BookSlidePanel';
 
 const courses: Course[] = [
   {
@@ -108,7 +109,16 @@ const courses: Course[] = [
 ];
 
 export function CoursesSection() {
+  const [sliderOpen, setSliderOpen] = useState(false);
+  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
+
+  const handleOpenPanel = (slug: string) => {
+    setSelectedSlug(slug);
+    setSliderOpen(true);
+  };
+
   return (
+    <>
     <section id="courses" className="w-full bg-white">
 
       {/* ── Hero Banner ── */}
@@ -205,6 +215,7 @@ export function CoursesSection() {
               key={course.id}
               course={course}
               useModel={true}  // first card 3D book, baaki static images
+              onOpenPanel={handleOpenPanel}
             />
           ))}
         </div>
@@ -220,5 +231,11 @@ export function CoursesSection() {
       </div>
 
     </section>
+    <BookSlidePanel
+      isOpen={sliderOpen}
+      onClose={() => setSliderOpen(false)}
+      slug={selectedSlug}
+    />
+    </>
   );
 }

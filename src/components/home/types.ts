@@ -14,4 +14,5 @@ export interface Course {
 export interface CourseCardProps {
   course: Course;
   useModel?: boolean;  // optional
+  onOpenPanel?: (slug: string) => void;
 }
