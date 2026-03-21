@@ -20,5 +20,21 @@ export default defineConfig({
   server: {
     // @ts-ignore
     allowedHosts: true,
-  }
+  },
+  build: {
+    // Raise the warning bar a bit while still catching unexpectedly large bundles
+    chunkSizeWarningLimit: 1400,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          three: ["three"],
+          "react-three-fiber": ["@react-three/fiber"],
+          "react-three-drei": ["@react-three/drei"],
+          "framer-motion": ["framer-motion"],
+          // keep core react libs bundled together for caching
+          react: ["react", "react-dom", "react-router", "react-router-dom"],
+        },
+      },
+    },
+  },
 });
