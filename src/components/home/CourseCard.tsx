@@ -39,7 +39,13 @@ export function CourseCard({ course, useModel = false, onOpenPanel }: CourseCard
     >
       <div className="overflow-hidden relative" style={{ height: '220px' }}>
         {useModel ? (
-          <BookCanvas pointer={pointer} cover={course.cover} />
+          <BookCanvas
+            pointer={pointer}
+            cover={course.cover}
+            scale={1.6}
+            cameraZ={1.8}
+            positionY={0.1}
+          />
         ) : (
           <img
             src={course.cover}

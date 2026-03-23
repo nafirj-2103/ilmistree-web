@@ -3,6 +3,9 @@ import React, { Component, Suspense, useRef, useEffect, useState, lazy } from "r
 export type BookCanvasProps = {
   pointer: { x: number; y: number };
   cover: string;
+  scale?: number;
+  cameraZ?: number;
+  positionY?: number;
 };
 
 // Error boundary to catch R3F rendering failures gracefully
@@ -28,7 +31,13 @@ const BookCanvasInner = lazy(() =>
   import("./BookCanvasInner").then((mod) => ({ default: mod.BookCanvasInner }))
 );
 
-export function BookCanvas({ pointer, cover }: BookCanvasProps) {
+export function BookCanvas({
+  pointer,
+  cover,
+  scale = 1.6,
+  cameraZ = 1.8,
+  positionY = 0.1,
+}: BookCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -42,7 +51,7 @@ export function BookCanvas({ pointer, cover }: BookCanvasProps) {
     <div
       ref={containerRef}
       className="w-full pointer-events-none bg-gradient-to-br from-gray-50 to-gray-100"
-      style={{ height: "220px" }}
+      style={{ height: "100%" }}
     >
       <R3FErrorBoundary
         fallback={
@@ -62,7 +71,15 @@ export function BookCanvas({ pointer, cover }: BookCanvasProps) {
             </div>
           }
         >
-          {mounted && <BookCanvasInner pointer={pointer} cover={cover} />}
+          {mounted && (
+            <BookCanvasInner
+              pointer={pointer}
+              cover={cover}
+              scale={scale}
+              cameraZ={cameraZ}
+              positionY={positionY}
+            />
+          )}
         </Suspense>
       </R3FErrorBoundary>
     </div>

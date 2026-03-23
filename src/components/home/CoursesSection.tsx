@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Clock, Star, Download, BookOpen, GraduationCap } from 'lucide-react';
+import { BookOpen, Download, Star, GraduationCap } from 'lucide-react';
 import { CourseCard } from './CourseCard';
 import { Course } from './types';
-import { BookSlidePanel } from '../book/BookSlidePanel';
 
 const courses: Course[] = [
   {
@@ -109,14 +108,6 @@ const courses: Course[] = [
 ];
 
 export function CoursesSection() {
-  const [sliderOpen, setSliderOpen] = useState(false);
-  const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
-
-  const handleOpenPanel = (slug: string) => {
-    setSelectedSlug(slug);
-    setSliderOpen(true);
-  };
-
   return (
     <>
     <section id="courses" className="w-full bg-white">
@@ -210,12 +201,11 @@ export function CoursesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {courses.map((course, idx) => (
+          {courses.map((course) => (
             <CourseCard
               key={course.id}
               course={course}
-              useModel={true}  // first card 3D book, baaki static images
-              onOpenPanel={handleOpenPanel}
+              useModel={true}  // render all cards with 3D book
             />
           ))}
         </div>
@@ -231,11 +221,6 @@ export function CoursesSection() {
       </div>
 
     </section>
-    <BookSlidePanel
-      isOpen={sliderOpen}
-      onClose={() => setSliderOpen(false)}
-      slug={selectedSlug}
-    />
     </>
   );
 }

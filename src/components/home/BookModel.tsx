@@ -12,6 +12,10 @@ export type BookModelProps = {
   pointer: { x: number; y: number };
   /** cover image path, e.g., "/textures/physics.jpg" */
   cover: string;
+  /** scale multiplier applied after model fit */
+  scale: number;
+  /** vertical position adjustment */
+  positionY: number;
 };
 
 /**
@@ -22,7 +26,12 @@ export type BookModelProps = {
  * Instead, everything is added to the scene imperatively via Three.js API.
  * We return null from render and manage the scene graph via refs + useEffect.
  */
-export function BookModel({ pointer, cover }: BookModelProps) {
+export function BookModel({
+  pointer,
+  cover,
+  scale,
+  positionY,
+}: BookModelProps) {
   const { scene } = useThree();
   const wrapperRef = useRef<THREE.Group | null>(null);
   const stageGroupRef = useRef<THREE.Group | null>(null);
@@ -148,18 +157,17 @@ export function BookModel({ pointer, cover }: BookModelProps) {
     const box = new THREE.Box3().setFromObject(cloned);
     const size = box.getSize(new THREE.Vector3());
     const maxDim = Math.max(size.x, size.y, size.z);
-    const scale = 1.6 / Math.max(maxDim, 0.1);
-    cloned.scale.multiplyScalar(scale);
+    const fitScale = 1 / Math.max(maxDim, 0.1); // normalize to unit
+    cloned.scale.multiplyScalar(fitScale * scale);
     box.setFromObject(cloned);
     const center = box.getCenter(new THREE.Vector3());
     cloned.position.sub(center);
 
-    cloned.position.y += 0.1;
-    cloned.position.z += 0.1;
+    cloned.position.y += positionY;
     cloned.rotation.set(0, 0, 0);
 
     bookGroup.add(cloned);
-  }, [bookScene, texture]);
+  }, [bookScene, texture, scale, positionY]);
 
   // Hover rotation
   useFrame(() => {

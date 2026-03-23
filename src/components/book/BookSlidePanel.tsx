@@ -19,7 +19,7 @@ interface BookSlidePanelProps {
 
 export function BookSlidePanel({ isOpen, onClose, slug }: BookSlidePanelProps) {
   const navigate = useNavigate();
-  const panelRef = useRef<HTMLDivElement>(null);                                     
+  const panelRef = useRef<HTMLDivElement>(null);
   const book = slug ? bookDetails[slug] : undefined;
 
   // Close on Escape key

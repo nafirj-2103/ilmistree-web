@@ -5,6 +5,7 @@ import { Header } from '@/components/home/Header';
 import { Footer } from '@/components/home/Footer';
 import { bookDetails } from './bookData';
 import { BookSlidePanel } from './BookSlidePanel';
+import { BookCanvas } from '../home/BookCanvas';
 import {
   ArrowLeft,
   BookOpen,
@@ -23,6 +24,7 @@ const BookDetailPage: React.FC = () => {
   const navigate = useNavigate();
   const book = slug ? bookDetails[slug] : undefined;
   const [sliderOpen, setSliderOpen] = useState(false);
+  const [pointer, setPointer] = useState({ x: 0, y: 0 });
 
   if (!book) {
     return (
@@ -77,14 +79,26 @@ const BookDetailPage: React.FC = () => {
         <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-transparent via-[#ee1c25] to-transparent" />
 
         <div className="relative max-w-5xl mx-auto px-6 py-14 md:py-20 flex flex-col md:flex-row items-center gap-10">
-          {/* Book cover */}
+          {/* Book 3D preview */}
           <div className="flex-shrink-0">
-            <div className="w-48 h-64 md:w-56 md:h-72 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20 transform hover:scale-105 transition-transform duration-300">
-              <img
-                src={book.cover}
-                alt={book.title}
-                className="w-full h-full object-cover"
+            <div
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+                const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+                setPointer({ x, y });
+              }}
+              onMouseLeave={() => setPointer({ x: 0, y: 0 })}
+              className="relative w-[360px] h-[360px] md:w-[360px] md:h-[300px] overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-white/0 border border-white/20 shadow-2xl"
+            >
+              <BookCanvas
+                pointer={pointer}
+                cover={book.cover}
+                scale={1.6}
+                cameraZ={1.8}
+                positionY={0.1}
               />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white/10 via-transparent to-white/0" />
             </div>
           </div>
 
@@ -105,17 +119,7 @@ const BookDetailPage: React.FC = () => {
               {book.intro}
             </p>
 
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-              <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-white/10 text-white/80 border border-white/15">
-                {book.className}
-              </span>
-              <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-white/10 text-white/80 border border-white/15">
-                {book.subject}
-              </span>
-              <span className="px-4 py-1.5 rounded-full text-xs font-medium bg-[#ee1c25]/30 text-[#ee1c25] border border-[#ee1c25]/40">
-                PDF Format
-              </span>
-            </div>
+           
           </div>
         </div>
       </div>
@@ -134,30 +138,30 @@ const BookDetailPage: React.FC = () => {
                 </h2>
               </div>
               <div className="p-6">
-                <div className="w-full h-[500px] bg-gradient-to-b from-gray-100 to-gray-50 rounded-xl flex flex-col items-center justify-center border-2 border-dashed border-gray-200">
-                  <BookOpen className="w-16 h-16 text-gray-300 mb-4" />
-                  <p className="text-gray-500 font-medium text-lg mb-2">
-                    {book.title}
-                  </p>
-                  <p className="text-gray-400 text-sm mb-6">
-                    PDF viewer will load here
-                  </p>
-                  <div className="flex gap-3">
-                    <Button className="bg-[#D32F2F] hover:bg-[#8B1A1A] text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 shadow-md hover:shadow-lg transition-all">
-                      <Eye className="w-4 h-4" />
-                      View PDF
-                    </Button>
-                    <Button
-                      variant="outline"
-                      onClick={() => {
-                        setSliderOpen(true);
-                      }}
-                      className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-all"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download PDF
-                    </Button>
-                  </div>
+                <div className="relative w-[423px] h-[500px] rounded-xl overflow-hidden border-2 border-dashed border-gray-200 bg-gray-100">
+                  <img
+                    src={book.cover}
+                    alt={`${book.subject} cover`}
+                    className="absolute inset-0 w-[500px] h-full object-cover object-right"
+                  />
+                 
+                 
+                </div>
+                <div className="flex gap-3 mt-6 justify-center md:justify-start">
+                  <Button className="bg-[#D32F2F] hover:bg-[#8B1A1A] text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 shadow-md hover:shadow-lg transition-all">
+                    <Eye className="w-4 h-4" />
+                    View PDF
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setSliderOpen(true);
+                    }}
+                    className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-all"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download PDF
+                  </Button>
                 </div>
               </div>
             </div>
