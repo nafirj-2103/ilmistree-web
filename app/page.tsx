@@ -8,6 +8,7 @@ import { CoursesSection } from '../components/home/CoursesSection';
 import { FeaturesSection } from '../components/home/FeaturesSection';
 import { ResourcesSection } from '../components/home/ResourcesSection';
 import { RecentlyAddedSection } from '../components/home/RecentlyAddedSection';
+import { AboutShortSection } from '../components/home/AboutShortSection';
 import { ContactSection } from '../components/home/ContactSection';
 import { Footer } from '../components/home/Footer';
 import { useScrollReveal } from '../hooks/use-scroll-reveal';
@@ -30,6 +31,7 @@ export default function Home() {
 
       {/* Uniform vertical spacing between main sections */}
       <div className="space-y-24 md:space-y-28 mt-24 md:mt-28">
+        <RevealWrapper><AboutShortSection /></RevealWrapper>
         <RevealWrapper><CoursesSection /></RevealWrapper>
         <RevealWrapper><FeaturesSection /></RevealWrapper>
         <RevealWrapper><ResourcesSection /></RevealWrapper>

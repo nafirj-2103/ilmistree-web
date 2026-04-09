@@ -1,7 +1,8 @@
-'use client'
+﻿'use client'
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Header } from "../../components/home/Header";
 import { SecondaryNavbar } from "../../components/home/SecondaryNavbar";
 import { Footer } from "../../components/home/Footer";
@@ -87,6 +88,42 @@ export default function AboutPage() {
         </div>
       </div>
       
+      {/* Hero Strip */}
+      <div
+        id="hero"
+        className="relative overflow-hidden bg-gradient-to-br from-[#1a0003] via-[#3d0008] to-[#6b0010]"
+      >
+        <div className="max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
+          {/* Left - Illustration */}
+          <div className="w-full max-w-lg mx-auto md:mx-0">
+            <Image
+              src={illustration}
+              alt="Download illustration"
+              width={780}
+              height={560}
+              className="w-full h-auto drop-shadow-lg"
+              priority
+            />
+          </div>
+
+          {/* Right Content */}
+          <div className="text-white space-y-4">
+           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight text-center md:text-left">
+            About <span className="text-[#ee1c25]">Ilmistree</span>
+          </h1>
+
+            <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl text-center md:text-left">
+              Learn more about our mission, content sources, and commitment to providing
+              free and accessible educational resources for students.
+            </p>
+
+            <div className="w-16 h-1 bg-white/70 rounded-full" />
+          </div>
+        </div>
+
+        {/* Subtle glow effect */}
+        <div className="absolute -top-20 -right-20 w-72 h-72 bg-red-500/30 blur-3xl rounded-full" />
+      </div>
 
       {/* Sections */}
       <div className="max-w-5xl mx-auto px-6 py-14 md:py-20 space-y-6">
@@ -94,9 +131,8 @@ export default function AboutPage() {
           <motion.section
             key={section.title}
             variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            initial="visible"
+            animate="visible"
             custom={idx}
             className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 p-6 md:p-8"
           >
@@ -115,3 +151,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

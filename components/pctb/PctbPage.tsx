@@ -30,14 +30,14 @@ export default function PctbPage() {
             <div className="flex-1 max-w-2xl">
               <div className="inline-flex items-center gap-2 bg-[#ee1c25]/20 border border-[#ee1c25]/40 rounded-full px-4 py-1.5 mb-5">
                 <span className="text-[#ee1c25] text-xs font-semibold tracking-wider uppercase">
-                  PCTB Official Textbooks
+                  PCTB  Textbooks
                 </span>
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-white">
                 9th Class Textbooks{" "}
                 <span className="bg-gradient-to-r from-[#ee1c25] to-[#ff6b6b] bg-clip-text text-transparent">
-                  PDF — All Subjects
+                  PDF - All Subjects
                 </span>
               </h2>
 
@@ -46,7 +46,7 @@ export default function PctbPage() {
                 <p className="text-gray-300 text-base leading-relaxed">
                   Students can easily access official Punjab Curriculum &amp; Textbook Board (PCTB)
                   9th class digital PDFs. Physics, Chemistry, Mathematics, Biology, Computer
-                  Science, English, Urdu, and Islamiat — all in one place for quick viewing and
+                  Science, English, Urdu, and Islamiat ï¿½ all in one place for quick viewing and
                   download.
                 </p>
               </div>

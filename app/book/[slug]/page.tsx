@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Header } from '@/components/home/Header';
@@ -67,14 +68,11 @@ export default function BookDetailPage({ params }: PageProps) {
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-6 py-3">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <button
-              onClick={() => router.push('/')}
-              className="hover:text-[#D32F2F] transition-colors"
-            >
-              Home
-            </button>
+            <Link href="/" className="hover:text-[#D32F2F] transition-colors">Home</Link>
             <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-gray-400">Books</span>
+            <Link href="/courses" className="hover:text-[#D32F2F] transition-colors">Courses</Link>
+            <ChevronRight className="w-3.5 h-3.5" />
+            <Link href="/courses/class-9" className="hover:text-[#D32F2F] transition-colors">Class 9</Link>
             <ChevronRight className="w-3.5 h-3.5" />
             <span className="text-gray-700 font-medium">{book.subject}</span>
           </div>
@@ -116,7 +114,7 @@ export default function BookDetailPage({ params }: PageProps) {
             <div className="inline-flex items-center gap-2 bg-[#ee1c25]/20 border border-[#ee1c25]/40 rounded-full px-4 py-1.5 mb-4">
               <GraduationCap className="w-4 h-4 text-[#ee1c25]" />
               <span className="text-[#ee1c25] text-xs font-semibold tracking-wider uppercase">
-                PCTB Official Textbook
+                PCTB Textbook
               </span>
             </div>
 
@@ -162,7 +160,7 @@ export default function BookDetailPage({ params }: PageProps) {
                     onClick={() => window.open(pdfLink, '_blank', 'noopener,noreferrer')}
                   >
                     <Eye className="w-4 h-4" />
-                    View PDF
+                    View online
                   </Button>
                   <Button
                     variant="outline"
@@ -176,7 +174,7 @@ export default function BookDetailPage({ params }: PageProps) {
                       link.click();
                       link.remove();
                     }}
-                    className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-all"
+                    className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-all text-center md:text-left"
                   >
                     <Download className="w-4 h-4" />
                     Download PDF
@@ -270,7 +268,7 @@ export default function BookDetailPage({ params }: PageProps) {
                   onClick={() => window.open(pdfLink, '_blank', 'noopener,noreferrer')}
                 >
                   <Eye className="w-4 h-4" />
-                  View Online
+                  View pdf
                 </Button>
               </div>
             </div>

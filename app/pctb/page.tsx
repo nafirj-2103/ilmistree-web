@@ -32,14 +32,14 @@ export default function PctbPage() {
             <div className="flex-1 max-w-2xl">
               <div className="inline-flex items-center gap-2 bg-[#ee1c25]/20 border border-[#ee1c25]/40 rounded-full px-4 py-1.5 mb-5">
                 <span className="text-[#ee1c25] text-xs font-semibold tracking-wider uppercase">
-                  PCTB Official Textbooks
+                  PCTB Textbooks
                 </span>
               </div>
 
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-white">
                 9th Class Textbooks{" "}
                 <span className="bg-gradient-to-r from-[#ee1c25] to-[#ff6b6b] bg-clip-text text-transparent">
-                  PDF � All Subjects
+                  PDF - All Subjects
                 </span>
               </h2>
 

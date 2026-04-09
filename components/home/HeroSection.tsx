@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button';
-import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Godber:wght@400;500;700&display=swap');
@@ -15,12 +15,6 @@ const styles = `
 `;
 
 export function HeroSection() {
-  const [isActive, setIsActive] = useState(false);
-
-  useEffect(() => {
-    // Trigger animation on mount
-    setIsActive(true);
-  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -28,7 +22,7 @@ export function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative w-full overflow-hidden" style={{ height: 'calc(100vh - 93px)' }}>
+    <section id="hero" className="relative w-full overflow-hidden py-10 md:py-0" style={{ height: 'calc(100vh - 93px)' }}>
 
       {/* Background Video */}
       <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
@@ -45,7 +39,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-[-60px] md:px-10 lg:px-20 flex flex-col justify-center h-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-10 lg:px-20 flex flex-col justify-center h-full">
  
         {/* Hero Title */}
         <div className="max-w-3xl">
@@ -66,11 +60,11 @@ export function HeroSection() {
 
         {/* ILMISTREE - large red text */}
 <h2
-  className="mb-[-40px] px-6 leading-tight tracking-wide"
+  className="mb-[-40px] px-6 leading-tight tracking-wide text-5xl md:text-[5rem]"
   style={{
     fontFamily: 'Milk and Honey, cursive',
     fontWeight: 400,
-    fontSize: 'clamp(5rem, 8vw, 4.5rem)',
+    fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
 
     background: 'linear-gradient(to bottom, #99000d, #f82732)',
 
@@ -94,20 +88,19 @@ export function HeroSection() {
 
   {/* Main Heading */}
    <div className="
-  max-w-3xl
-  w-fit
+  max-w-full
+  w-full
+  md:w-fit
   backdrop-blur-md
   bg-white/10
   border border-white/20
   border-r-[3px] border-b-[1px]
   rounded-2xl
-  px-6 py-2
+  px-4 py-4 md:px-6 md:py-2
   shadow-xl
-  inline-block
-  box-border
   mb-10 ">
     <h1
-    className="leading-[1.15] mb-0"
+    className="leading-[1.15] mb-0 text-3xl md:text-[3rem]"
     style={{
       fontFamily: 'Impact, sans-serif',
       fontWeight: 400,
@@ -120,7 +113,7 @@ export function HeroSection() {
 
   {/* Second Line */}
   <h2
-    className="leading-[1.15] mb-5"
+    className="leading-[1.15] mb-5 text-3xl md:text-[3rem]"
     style={{
       fontFamily: 'Impact, sans-serif',
       fontWeight: 400,
@@ -165,31 +158,20 @@ export function HeroSection() {
 
 
 {/* CTA Buttons */}
-<div className="flex flex-row items-center gap-10 flex-wrap flex-shrink-0">
+<div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0 w-full">
   <Button
     onClick={() => scrollToSection('courses')}
-    className="
-      bg-gradient-to-b from-[#99000dee] to-[#ee1c25]
-      text-white px-10 py-3 h-auto text-base
-      rounded-full font-semibold
-      transition-all duration-300
-      hover:scale-[1.05]
-      shadow-md
-      animate-float
-      hover:shadow-[0_0_25px_rgba(238,28,37,0.75)]
-    "
+    className="w-full sm:w-auto bg-gradient-to-b from-[#99000dee] to-[#ee1c25] text-white px-10 py-3 h-auto text-base rounded-full font-semibold transition-all duration-300 hover:scale-[1.05] shadow-md animate-float hover:shadow-[0_0_25px_rgba(238,28,37,0.75)] min-h-[44px]"
   >
     Explore Courses
   </Button>
-
-            <Button
-              onClick={() => scrollToSection('about')}
-              variant="outline"
-              className="border-2 border-[#cd141d] text-[#cd141d] bg-transparent hover:bg-[#cd141d] hover:text-white px-10 py-3 h-auto text-base rounded-full font-semibold transition-all hover:scale-[1.02]"
-            >
-              Learn More
-            </Button>
-          </div>
+  <Link
+    href="/about"
+    className="w-full sm:w-auto border-2 border-[#cd141d] text-[#cd141d] bg-transparent hover:bg-[#cd141d] hover:text-white px-10 py-3 h-auto text-base rounded-full font-semibold transition-all hover:scale-[1.02] min-h-[44px] text-center"
+  >
+    Learn More
+  </Link>
+</div>
         </div>
       </div>
 
@@ -197,7 +179,7 @@ export function HeroSection() {
       <div
         className="absolute bottom-8 right-10 w-32 h-1 bg-[#ee1c25] shadow-md"
         style={{
-          animation: isActive ? 'slideLeftRight 2s ease-in-out infinite' : 'none',
+          animation: 'slideLeftRight 2s ease-in-out infinite',
         }}
       ></div>
       

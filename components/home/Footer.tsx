@@ -110,18 +110,18 @@ export function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="mt-[20px]">
+          <div className="mt-[20px] text-center md:text-left" suppressHydrationWarning>
             <h3 className="text-lg font-bold mb-4">Newsletter</h3>
             <p className="text-white/80 mb-4">Subscribe to get updates</p>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-3">
               <Input 
                 type="email"
                 placeholder="Your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white focus:ring-white"
+                className="w-full bg-white/20 border-white/30 text-white placeholder:text-white/60 focus:border-white focus:ring-white"
               />
-              <Button className="bg-white text-[#D32F2F] hover:bg-gray-100 px-4 flex-shrink-0">
+              <Button className="w-full sm:w-auto bg-white text-[#D32F2F] hover:bg-gray-100 px-4 min-h-[44px] flex-shrink-0">
                 <Send className="w-4 h-4" />
               </Button>
             </div>

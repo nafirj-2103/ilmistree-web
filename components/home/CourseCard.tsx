@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -12,6 +12,12 @@ export function CourseCard({ course, useModel = false, onOpenPanel }: CourseCard
   const router = useRouter();
   // pointer coordinates normalized to [-1,1] where (0,0) is center
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
+  const [titleExpanded, setTitleExpanded] = useState(false);
+  const [descExpanded, setDescExpanded] = useState(false);
+  const [titleOverflow, setTitleOverflow] = useState(false);
+  const [descOverflow, setDescOverflow] = useState(false);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
 
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!useModel) return;
@@ -33,13 +39,42 @@ export function CourseCard({ course, useModel = false, onOpenPanel }: CourseCard
     }
   };
 
+  useEffect(() => {
+    if (!titleExpanded) return;
+    const timer = setTimeout(() => setTitleExpanded(false), 6000);
+    return () => clearTimeout(timer);
+  }, [titleExpanded]);
+
+  useEffect(() => {
+    if (!descExpanded) return;
+    const timer = setTimeout(() => setDescExpanded(false), 6000);
+    return () => clearTimeout(timer);
+  }, [descExpanded]);
+
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (titleRef.current) {
+        const el = titleRef.current;
+        setTitleOverflow(el.scrollHeight - 1 > el.clientHeight);
+      }
+      if (descRef.current) {
+        const el = descRef.current;
+        setDescOverflow(el.scrollHeight - 1 > el.clientHeight);
+      }
+    };
+
+    checkOverflow();
+    window.addEventListener('resize', checkOverflow);
+    return () => window.removeEventListener('resize', checkOverflow);
+  }, [course.title, course.description]);
+
   return (
     <Card
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
-      className="overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group"
+      className="overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group flex flex-col h-full"
     >
-      <div className="overflow-hidden relative" style={{ height: '220px' }}>
+      <div className="overflow-hidden relative h-40 sm:h-44 md:h-[220px]">
         {useModel ? (
           <BookCanvas
             pointer={pointer}
@@ -57,31 +92,68 @@ export function CourseCard({ course, useModel = false, onOpenPanel }: CourseCard
         )}
       </div>
 
-      <div className="p-6">
-        <div className="inline-block px-3 py-1 bg-red-50 text-[#D32F2F] text-sm font-semibold rounded-full mb-3">
-          {course.category}
-        </div>
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{course.title}</h3>
-        <p className="text-gray-600 mb-4 line-clamp-2">{course.description}</p>
-
-        <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-          <div className="flex items-center gap-1">
-            <Clock className="w-4 h-4" />
-            {course.duration}
+      <div className="p-3 md:p-4 flex flex-col flex-1">
+        <div className="flex items-center justify-between mb-3 gap-3">
+          <div className="inline-block px-3 py-1 bg-red-50 text-[#D32F2F] text-xs sm:text-sm font-semibold rounded-full">
+            {course.category}
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 text-xs sm:text-sm text-gray-600">
             <Star className="w-4 h-4 fill-[#D32F2F] text-[#D32F2F]" />
             {course.rating}
           </div>
+        </div>
+        <div className="flex items-baseline gap-1 mb-2">
+          <h3
+            ref={titleRef}
+            className={`text-lg sm:text-xl font-bold text-gray-900 ${titleExpanded ? '' : 'line-clamp-2'}`}
+          >
+            {course.title}
+          </h3>
+          {(titleOverflow || titleExpanded) && (
+            <button
+              type="button"
+              aria-label={titleExpanded ? 'Collapse title' : 'Expand title'}
+              onClick={() => setTitleExpanded((v) => !v)}
+              className="text-gray-400 hover:text-[#D32F2F] text-lg leading-none select-none relative top-px"
+            >
+              {titleExpanded ? '✕' : '...'}
+            </button>
+          )}
+        </div>
+
+        <div className="flex items-start gap-1 mb-4">
+          <p
+            ref={descRef}
+            className={`text-sm md:text-base text-gray-600 ${descExpanded ? '' : 'line-clamp-2'}`}
+          >
+            {course.description}
+          </p>
+          {(descOverflow || descExpanded) && (
+            <button
+              type="button"
+              aria-label={descExpanded ? 'Collapse description' : 'Expand description'}
+              onClick={() => setDescExpanded((v) => !v)}
+              className="text-gray-400 hover:text-[#D32F2F] text-lg leading-none mt-[2px] select-none"
+            >
+              {descExpanded ? '✕' : '...'}
+            </button>
+          )}
+        </div>
+
+        <div className="flex items-center justify-between text-xs sm:text-sm text-gray-500 mb-4">
           <div className="flex items-center gap-1">
-            <Download className="w-4 h-4" />
+            <Clock className="w-3.5 h-3.5" />
+            {course.duration}
+          </div>
+          <div className="flex items-center gap-1">
+            <Download className="w-3.5 h-3.5" />
             {course.downloads}
           </div>
         </div>
 
         <Button
           onClick={handlePrimaryClick}
-          className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 group-hover:scale-105"
+          className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 group-hover:scale-105 text-sm sm:text-base py-2.5 md:py-3"
         >
           View & Download
           <ArrowRight className="w-4 h-4" />

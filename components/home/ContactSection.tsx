@@ -23,21 +23,21 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="w-full pt-24 pb-8 bg-[#cd141d]">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Get In Touch
           </h2>
-          <p className="text-lg text-white/90 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-white/90 max-w-3xl mx-auto">
             Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2" suppressHydrationWarning>
           {/* Contact Form */}
           <Card className="p-8 bg-white/10 backdrop-blur-sm border-white/20">
             <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="text-white font-medium mb-2 block">Name</label>
                 <Input 
@@ -78,7 +78,7 @@ export function ContactSection() {
               </div>
               <Button 
                 type="submit"
-                className="w-full bg-white text-[#D32F2F] hover:bg-gray-100 py-6 text-lg font-semibold rounded-lg transition-all hover:scale-105 flex items-center justify-center gap-2"
+                className="w-full bg-white text-[#D32F2F] hover:bg-gray-100 py-4 sm:py-6 text-lg font-semibold rounded-lg transition-all hover:scale-105 flex items-center justify-center gap-2 min-h-[44px]"
               >
                 Send Message
                 <Send className="w-5 h-5" />
@@ -99,7 +99,6 @@ export function ContactSection() {
                   <div>
                     <h4 className="text-white font-semibold mb-2">Email</h4>
                     <p className="text-white/90">info@ilmistree.com</p>
-                    <p className="text-white/90">support@ilmistree.com</p>
                   </div>
                 </div>
 
@@ -109,8 +108,8 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold mb-2">Phone</h4>
-                    <p className="text-white/90">+1 (555) 123-4567</p>
-                    <p className="text-white/90 text-sm">Mon-Fri: 9AM - 6PM</p>
+                    <p className="text-white/90">+92 3266438203</p>
+                    <p className="text-white/90 text-sm">Mon-Fri : 9AM - 6PM</p>
                   </div>
                 </div>
 
@@ -120,8 +119,7 @@ export function ContactSection() {
                   </div>
                   <div>
                     <h4 className="text-white font-semibold mb-2">Address</h4>
-                    <p className="text-white/90">123 Education Street</p>
-                    <p className="text-white/90">Learning District, KN 12345</p>
+                    <p className="text-white/90">Pakistan,Punjab,Sahiwal</p>
                   </div>
                 </div>
               </div>

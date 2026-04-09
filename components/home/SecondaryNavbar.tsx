@@ -30,7 +30,7 @@ export function SecondaryNavbar() {
   const [isNotesOpen, setIsNotesOpen] = useState(false);
 
   return (
-    <nav className={`w-full bg-gray-700 border-b border-gray-600 fixed top-[73px] z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'}`}>
+    <nav className={`w-full bg-gray-700 border-b border-gray-600 fixed top-[73px] z-40 transition-transform duration-300 ${isVisible ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'}`} suppressHydrationWarning>
       <div className="max-w-7xl mx-auto px-20 h-[20px] flex items-center gap-8">
              
       {/* Past Papers */}
