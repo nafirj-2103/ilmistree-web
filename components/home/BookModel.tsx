@@ -43,6 +43,7 @@ export function BookModel({
   const { scene: stageScene } = useGLTF('/models/bluestage.glb') as any;
   const { scene: bookScene } = useGLTF('/models/book.glb') as any;
 
+  useTexture.preload(cover);
   const texture = useTexture(cover);
 
   useEffect(() => {

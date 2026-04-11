@@ -38,7 +38,7 @@ export function HeroSection() {
           <p
             className="mb-3 leading-tight scale-135 md:scale-150 lg:scale-300 origin-left"
             style={{
-              fontFamily: 'Godber, sans-serif',
+              fontFamily: 'Arial, Helvetica, sans-serif',
               fontWeight: 400,
               fontSize: 'clamp(0.875rem, 2vw, 1.125rem)',
               WebkitFontSmoothing: 'auto',
@@ -51,11 +51,10 @@ export function HeroSection() {
 
         {/* ILMISTREE - large red text */}
 <h2
-  className="mb-[-40px] px-6 leading-tight tracking-wide text-5xl md:text-[5rem]"
+  className="font-hero-script mb-[-28px] px-6 leading-tight tracking-wide text-[4.2rem] md:mb-[-40px] md:text-[5rem]"
   style={{
-    fontFamily: 'Milk and Honey, cursive',
     fontWeight: 400,
-    fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+    fontSize: 'clamp(4rem, 12vw, 5.2rem)',
 
     background: 'linear-gradient(to bottom, #99000d, #f82732)',
 
@@ -91,11 +90,10 @@ export function HeroSection() {
   shadow-xl
   mb-10 ">
     <h1
-    className="leading-[1.15] mb-0 text-3xl md:text-[3rem]"
+    className="font-hero-display leading-[1.15] mb-0 text-3xl md:text-[3rem]"
     style={{
-      fontFamily: 'Impact, Godber, sans-serif',
-      fontWeight: 400,
-      fontSize: 'clamp(1.75rem, 5vw, 3rem)',
+      fontWeight: 700,
+      fontSize: 'clamp(2rem, 5.2vw, 3rem)',
       color: '#1f2937'
     }}
   >
@@ -104,11 +102,10 @@ export function HeroSection() {
 
   {/* Second Line */}
   <h2
-    className="leading-[1.15] mb-5 text-3xl md:text-[3rem]"
+    className="font-hero-display leading-[1.15] mb-5 text-3xl md:text-[3rem]"
     style={{
-      fontFamily: 'Impact, Godber, sans-serif',
-      fontWeight: 400,
-      fontSize: 'clamp(1.75rem, 5vw, 3rem)',
+      fontWeight: 700,
+      fontSize: 'clamp(2rem, 5.2vw, 3rem)',
       color: '#1f2937'
     }}
   >
@@ -122,8 +119,8 @@ export function HeroSection() {
     <p
       className="leading-relaxed max-w-2xl"
       style={{
-        fontFamily: 'Godber, sans-serif',
-        fontWeight: 550,
+        fontFamily: 'Arial, Helvetica, sans-serif',
+        fontWeight: 700,
         fontSize: 'clamp(0.875rem, 2vw, 1.125rem)',
         color: '#374151'
       }}

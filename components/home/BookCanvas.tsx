@@ -1,6 +1,7 @@
 'use client'
 
-import React, { Component, Suspense, useRef, useEffect, useState, lazy } from "react";
+import React, { Component, useMemo, useRef, useState } from "react";
+import { BookCanvasInner } from "./BookCanvasInner";
 
 export type BookCanvasProps = {
   pointer: { x: number; y: number };
@@ -28,11 +29,6 @@ class R3FErrorBoundary extends Component<
   }
 }
 
-// Lazy-load the R3F Canvas to isolate from Tempo's annotation system
-const BookCanvasInner = lazy(() =>
-  import("./BookCanvasInner").then((mod) => ({ default: mod.BookCanvasInner }))
-);
-
 export function BookCanvas({
   pointer,
   cover,
@@ -41,48 +37,50 @@ export function BookCanvas({
   positionY = 0.1,
 }: BookCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    // Delay mount to give Tempo annotation time to settle
-    const id = requestAnimationFrame(() => setMounted(true));
-    return () => cancelAnimationFrame(id);
-  }, []);
+  const [isReady, setIsReady] = useState(false);
+  const encodedCover = useMemo(() => encodeURI(cover), [cover]);
 
   return (
     <div
       ref={containerRef}
-      className="w-full pointer-events-none bg-gradient-to-br from-gray-50 to-gray-100"
+      className="relative w-full pointer-events-none bg-gradient-to-br from-gray-50 to-gray-100"
       style={{ height: "100%" }}
     >
+      <img
+        src={encodedCover}
+        alt="Book cover"
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
+          isReady ? "opacity-0" : "opacity-100"
+        }`}
+        loading="eager"
+        decoding="async"
+      />
+
       <R3FErrorBoundary
         fallback={
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
             <img
-              src={cover}
+              src={encodedCover}
               alt="Book cover"
               className="max-h-full object-contain"
             />
           </div>
         }
       >
-        <Suspense
-          fallback={
-            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
-              <div className="animate-pulse text-gray-400">Loading 3D...</div>
-            </div>
-          }
+        <div
+          className={`absolute inset-0 transition-opacity duration-300 ${
+            isReady ? "opacity-100" : "opacity-0"
+          }`}
         >
-          {mounted && (
-            <BookCanvasInner
-              pointer={pointer}
-              cover={cover}
-              scale={scale}
-              cameraZ={cameraZ}
-              positionY={positionY}
-            />
-          )}
-        </Suspense>
+          <BookCanvasInner
+            pointer={pointer}
+            cover={encodedCover}
+            scale={scale}
+            cameraZ={cameraZ}
+            positionY={positionY}
+            onReady={() => setIsReady(true)}
+          />
+        </div>
       </R3FErrorBoundary>
     </div>
   );

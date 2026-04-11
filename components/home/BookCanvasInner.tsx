@@ -11,6 +11,7 @@ export type BookCanvasInnerProps = {
   scale: number;
   cameraZ: number;
   positionY: number;
+  onReady?: () => void;
 };
 
 /**
@@ -24,6 +25,7 @@ export function BookCanvasInner({
   scale,
   cameraZ,
   positionY,
+  onReady,
 }: BookCanvasInnerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -51,6 +53,7 @@ export function BookCanvasInner({
             const directional = new THREE.DirectionalLight(0xffffff, 1);
             directional.position.set(3, 3, 3);
             scene.add(directional);
+            onReady?.();
           },
         } as any,
         canvasChildren
