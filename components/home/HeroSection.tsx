@@ -2,19 +2,10 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-
-const styles = `
-  @import url('https://fonts.googleapis.com/css2?family=Godber:wght@400;500;700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Milk+and+Honey&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
-  
-  @font-face {
-    font-family: 'R';
-    src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
-  }
-`;
+import { useState } from 'react';
 
 export function HeroSection() {
+  const [floatPaused, setFloatPaused] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -87,7 +78,7 @@ export function HeroSection() {
 
 
   {/* Main Heading */}
-   <div className="
+  <div className="
   max-w-full
   w-full
   md:w-fit
@@ -102,7 +93,7 @@ export function HeroSection() {
     <h1
     className="leading-[1.15] mb-0 text-3xl md:text-[3rem]"
     style={{
-      fontFamily: 'Impact, sans-serif',
+      fontFamily: 'Impact, Godber, sans-serif',
       fontWeight: 400,
       fontSize: 'clamp(1.75rem, 5vw, 3rem)',
       color: '#1f2937'
@@ -115,7 +106,7 @@ export function HeroSection() {
   <h2
     className="leading-[1.15] mb-5 text-3xl md:text-[3rem]"
     style={{
-      fontFamily: 'Impact, sans-serif',
+      fontFamily: 'Impact, Godber, sans-serif',
       fontWeight: 400,
       fontSize: 'clamp(1.75rem, 5vw, 3rem)',
       color: '#1f2937'
@@ -158,16 +149,19 @@ export function HeroSection() {
 
 
 {/* CTA Buttons */}
-<div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0 w-full">
+<div className="flex flex-row items-center gap-3 w-full justify-center sm:justify-start">
   <Button
     onClick={() => scrollToSection('courses')}
-    className="w-full sm:w-auto bg-gradient-to-b from-[#99000dee] to-[#ee1c25] text-white px-10 py-3 h-auto text-base rounded-full font-semibold transition-all duration-300 hover:scale-[1.05] shadow-md animate-float hover:shadow-[0_0_25px_rgba(238,28,37,0.75)] min-h-[44px]"
+    onMouseEnter={() => setFloatPaused(true)}
+    onMouseLeave={() => setFloatPaused(false)}
+    className="w-1/2 sm:w-auto max-w-xs bg-gradient-to-b from-[#99000dee] to-[#ee1c25] text-white px-8 py-3 h-auto text-base rounded-full font-semibold transition-all duration-300 hover:scale-[1.05] shadow-md animate-float hover:shadow-[0_0_25px_rgba(238,28,37,0.75)] min-h-[44px]"
+    style={{ animationPlayState: floatPaused ? 'paused' : 'running' }}
   >
     Explore Courses
   </Button>
   <Link
     href="/about"
-    className="w-full sm:w-auto border-2 border-[#cd141d] text-[#cd141d] bg-transparent hover:bg-[#cd141d] hover:text-white px-10 py-3 h-auto text-base rounded-full font-semibold transition-all hover:scale-[1.02] min-h-[44px] text-center"
+    className="w-1/2 sm:w-auto max-w-xs border-2 border-[#cd141d] text-[#cd141d] bg-transparent hover:bg-[#cd141d] hover:text-white px-8 py-3 h-auto text-base rounded-full font-semibold transition-all hover:scale-[1.02] min-h-[44px] text-center"
   >
     Learn More
   </Link>

@@ -5,12 +5,14 @@ export interface BookDetail {
   className: string;
   cover: string;
   intro: string;
+  description: string;
+  mainTopics: string[];
   pctbCredit: string;
   educationalPurpose: string;
   copyrightRespect: string;
   removalRequest: string;
   acknowledgement: string;
-  pdfUrl: string; // direct link to the PDF for view/download actions
+  pdfUrl: string;
 }
 
 const DEFAULT_PDF =
@@ -26,6 +28,14 @@ export const bookDetails: Record<string, BookDetail> = {
     cover: '/models/textures/physics.jpg',
     intro:
       'Students can now access the complete 9th class Physics textbook in a convenient digital PDF format. This resource is designed to help learners go through their chapters at their own pace, whether they are preparing for exams or simply revising key topics. Teachers can also benefit from this version while planning their lessons and classroom activities.',
+    description:
+      'Physics Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+    mainTopics: [
+      'Physical Quantities & Measurements',
+      'Kinematics & Dynamics',
+      'Work, Energy, and Power',
+      'Thermal Properties of Matter'
+    ],
     pctbCredit:
       'This textbook has been officially developed and published under the supervision of the Punjab Curriculum and Textbook Board, commonly known as PCTB. It follows the approved national curriculum and is used in schools across Punjab. We are sharing this digital copy solely to make it easier for students to reach their study material without delay.',
     educationalPurpose:
@@ -46,6 +56,14 @@ export const bookDetails: Record<string, BookDetail> = {
     cover: '/models/textures/Quran.jpg',
     intro:
       'The 9th class Turjuma Tul Quran textbook is now available in digital format for students who wish to study Quranic translation alongside their regular curriculum. This PDF version allows students to read and reflect on the teachings at any time, making spiritual learning more accessible and flexible.',
+    description:
+      'Turjuma Tul Quran Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+    mainTopics: [
+      'Quranic Verses & Translations',
+      'Islamic Teachings & Ethics',
+      'Historical Context of Revelations',
+      'Practical Application of Quranic Wisdom'
+    ],
     pctbCredit:
       'This book is part of the official course material published by the Punjab Curriculum and Textbook Board (PCTB). It covers selected Quranic verses along with their Urdu translations as prescribed in the Punjab educational syllabus. The digital copy is shared here to ensure students have convenient access to their required reading.',
     educationalPurpose:
@@ -66,6 +84,14 @@ export const bookDetails: Record<string, BookDetail> = {
     cover: '/models/textures/islamiat.jpg',
     intro:
       'Access the official 9th class Islamiat textbook in PDF format right here. This digital version covers all the chapters included in the Punjab board syllabus, from the basics of Islamic teachings to detailed discussions on moral values and historical events. Students can use this book for daily study and exam preparation alike.',
+    description:
+      'Islamiat Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+    mainTopics: [
+      'Islamic Principles & Beliefs',
+      'Pillars of Islam',
+      'Islamic History & Civilization',
+      'Moral Character & Ethics'
+    ],
     pctbCredit:
       'The Islamiat textbook for 9th class is published by the Punjab Curriculum and Textbook Board (PCTB) as a core subject resource. It is designed to educate students about Islamic principles, ethics, and history in a structured manner. This digital version is being shared to help students access their course material with ease.',
     educationalPurpose:
@@ -86,6 +112,14 @@ export const bookDetails: Record<string, BookDetail> = {
     cover: '/models/textures/MATH.jpg',
     intro:
       'The 9th class Mathematics textbook is available here in a clean and readable PDF format. This book covers all essential topics including algebra, geometry, trigonometry, and data handling as laid out in the Punjab board curriculum. Whether you are solving practice problems or revising formulas before exams, this digital copy has you covered.',
+    description:
+      'Mathematics Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+    mainTopics: [
+      'Algebra & Equations',
+      'Geometry & Shapes',
+      'Trigonometry Basics',
+      'Data Handling & Statistics'
+    ],
     pctbCredit:
       'Published by the Punjab Curriculum and Textbook Board (PCTB), this Mathematics textbook is the standard reference used in government and private schools across Punjab. We are making it available in digital form so that every student can have quick and easy access to the material they need for academic success.',
     educationalPurpose:
@@ -106,6 +140,14 @@ export const bookDetails: Record<string, BookDetail> = {
     cover: '/models/textures/INSHA.jpg',
     intro:
       'Here you can find the 9th class Urdu Qawaid o Insha textbook in a digital PDF version. This book focuses on Urdu grammar rules and essay writing skills that are essential for students studying under the Punjab board. The digital format makes it simple to read and refer to chapters whenever needed.',
+    description:
+      'Urdu Qawaid o Insha Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+    mainTopics: [
+      'Urdu Grammar Rules',
+      'Letter Writing Techniques',
+      'Essay Composition',
+      'Vocabulary & Expression'
+    ],
     pctbCredit:
       'This Urdu language textbook is officially produced by the Punjab Curriculum and Textbook Board (PCTB). It includes comprehensive lessons on grammar structure, letter writing, and creative composition as per the approved syllabus. We share this copy so that students can easily study their Urdu course material online.',
     educationalPurpose:
@@ -126,6 +168,14 @@ export const bookDetails: Record<string, BookDetail> = {
     cover: '/models/textures/BIOLOGY.jpg',
     intro:
       'The complete 9th class Biology textbook is available for students in a downloadable PDF format. This book explores topics ranging from cell biology and genetics to ecology and human physiology, all aligned with the Punjab board syllabus. Students can use this resource for detailed study and quick revision of biological concepts.',
+    description:
+      'Biology Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+    mainTopics: [
+      'Cell Structure & Functions',
+      'Genetics & Heredity',
+      'Human Body Systems',
+      'Ecology & Environment'
+    ],
     pctbCredit:
       'This Biology textbook is an official publication of the Punjab Curriculum and Textbook Board (PCTB). It is carefully written to match the learning outcomes defined in the national curriculum framework. By sharing this digital version, we aim to help students access their science material without any difficulty.',
     educationalPurpose:
@@ -146,6 +196,14 @@ export const bookDetails: Record<string, BookDetail> = {
     cover: '/models/textures/COMPUTER.jpg',
     intro:
       'Get the 9th class Computer Science textbook in PDF format for easy reading and studying. This book introduces students to the fundamentals of computing, programming logic, hardware components, and software applications. It is an essential resource for anyone looking to build a strong base in information technology.',
+    description:
+      'Computer Science Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+    mainTopics: [
+      'Computer Hardware & Components',
+      'Programming Fundamentals',
+      'Software Applications',
+      'Data Organization & Databases'
+    ],
     pctbCredit:
       'Developed under the guidelines of the Punjab Curriculum and Textbook Board (PCTB), this Computer Science textbook is part of the official 9th class curriculum. It is written to give students a practical and theoretical understanding of modern computing. This digital version is shared here so students can study from anywhere.',
     educationalPurpose:
@@ -166,6 +224,14 @@ export const bookDetails: Record<string, BookDetail> = {
     cover: '/models/textures/ENG GRAMER.jpg',
     intro:
       'The 9th class English Grammar textbook is now available as a PDF download for students. This book covers key grammar topics including tenses, sentence structure, active and passive voice, direct and indirect speech, and more. It is a valuable companion for anyone aiming to strengthen their English language skills.',
+    description:
+      'English Grammar Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+    mainTopics: [
+      'Parts of Speech & Usage',
+      'Tense Forms & Applications',
+      'Sentence Structure & Composition',
+      'Active & Passive Voice'
+    ],
     pctbCredit:
       'This English Grammar textbook is officially published by the Punjab Curriculum and Textbook Board (PCTB) as part of the 9th class English language course. The content follows the national curriculum standards and is widely used in schools throughout Punjab. We share this PDF to help students access their grammar lessons with convenience.',
     educationalPurpose:
@@ -186,6 +252,14 @@ export const bookDetails: Record<string, BookDetail> = {
     cover: '/models/textures/URDU.jpg',
     intro:
       'Download or view the 9th class Urdu textbook in PDF format. This book includes poetry, prose, and literary selections that are part of the Punjab board curriculum for Urdu language. It helps students develop a deeper appreciation for Urdu literature while building their reading and comprehension abilities.',
+    description:
+      'Urdu Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+    mainTopics: [
+      'Classical & Modern Poetry',
+      'Prose & Literary Selections',
+      'Urdu Comprehension Skills',
+      'Literature Analysis & Appreciation'
+    ],
     pctbCredit:
       'Published by the Punjab Curriculum and Textbook Board (PCTB), this Urdu textbook is the official course material prescribed for 9th class students in Punjab. It contains carefully selected literary works and exercises. We are providing this digital copy to ensure students have uninterrupted access to their study resources.',
     educationalPurpose:

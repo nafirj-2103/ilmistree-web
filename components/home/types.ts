@@ -14,5 +14,9 @@ export interface Course {
 export interface CourseCardProps {
   course: Course;
   useModel?: boolean;  // optional
+  modelInteractive?: boolean; // disable hover movement when false
   onOpenPanel?: (slug: string) => void;
+  onTouchStart?: (event: React.TouchEvent<HTMLDivElement>) => void;
+  onTouchMove?: (event: React.TouchEvent<HTMLDivElement>) => void;
+  onTouchEnd?: (event: React.TouchEvent<HTMLDivElement>) => void;
 }

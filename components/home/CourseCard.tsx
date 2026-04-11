@@ -8,7 +8,15 @@ import { ArrowRight, Clock, Star, Download } from 'lucide-react';
 import { BookCanvas } from './BookCanvas';
 import { Course, CourseCardProps } from './types'; // or wherever interface is
 
-export function CourseCard({ course, useModel = false, onOpenPanel }: CourseCardProps) {
+export function CourseCard({
+  course,
+  useModel = false,
+  modelInteractive = true,
+  onOpenPanel,
+  onTouchStart,
+  onTouchMove,
+  onTouchEnd,
+}: CourseCardProps) {
   const router = useRouter();
   // pointer coordinates normalized to [-1,1] where (0,0) is center
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
@@ -20,7 +28,7 @@ export function CourseCard({ course, useModel = false, onOpenPanel }: CourseCard
   const descRef = useRef<HTMLParagraphElement>(null);
 
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!useModel) return;
+    if (!useModel || !modelInteractive) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
     const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
@@ -28,7 +36,7 @@ export function CourseCard({ course, useModel = false, onOpenPanel }: CourseCard
   };
 
   const handleLeave = () => {
-    if (useModel) setPointer({ x: 0, y: 0 });
+    if (useModel && modelInteractive) setPointer({ x: 0, y: 0 });
   };
 
   const handlePrimaryClick = () => {
@@ -72,6 +80,9 @@ export function CourseCard({ course, useModel = false, onOpenPanel }: CourseCard
     <Card
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
       className="overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group flex flex-col h-full"
     >
       <div className="overflow-hidden relative h-40 sm:h-44 md:h-[220px]">

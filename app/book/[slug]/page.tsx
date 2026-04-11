@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
@@ -20,6 +20,7 @@ import {
   Mail,
   GraduationCap,
   ChevronRight,
+  X,
 } from 'lucide-react';
 
 interface PageProps {
@@ -34,7 +35,20 @@ export default function BookDetailPage({ params }: PageProps) {
   const book = slug ? bookDetails[slug] : undefined;
   const pdfLink = book?.pdfUrl ?? 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
   const [sliderOpen, setSliderOpen] = useState(false);
+  const [quickOpen, setQuickOpen] = useState(false);
+  const [quickMounted, setQuickMounted] = useState(false);
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    if (quickOpen) setQuickMounted(true);
+  }, [quickOpen]);
+
+  useEffect(() => {
+    if (!quickOpen && quickMounted) {
+      const t = setTimeout(() => setQuickMounted(false), 220);
+      return () => clearTimeout(t);
+    }
+  }, [quickOpen, quickMounted]);
 
   if (!book) {
     return (
@@ -133,6 +147,24 @@ export default function BookDetailPage({ params }: PageProps) {
 
       {/* Main content */}
       <div className="max-w-5xl mx-auto px-6 py-12">
+        {/* Book Description Section */}
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{book.title}</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            {book.description}
+          </p>
+          {book.mainTopics && book.mainTopics.length > 0 && (
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Main Topics Covered:</h3>
+              <ul className="list-disc list-inside space-y-2">
+                {book.mainTopics.map((topic, idx) => (
+                  <li key={idx} className="text-gray-700">{topic}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Left column - Main content */}
           <div className="lg:col-span-2 space-y-8">
@@ -165,6 +197,13 @@ export default function BookDetailPage({ params }: PageProps) {
                   <Button
                     variant="outline"
                     onClick={() => {
+                      const isMobile =
+                        typeof window !== 'undefined' &&
+                        window.matchMedia('(max-width: 1023px)').matches;
+                      if (isMobile) {
+                        setQuickOpen(true);
+                        return;
+                      }
                       const link = document.createElement('a');
                       link.href = pdfLink;
                       link.target = '_blank';
@@ -179,6 +218,19 @@ export default function BookDetailPage({ params }: PageProps) {
                     <Download className="w-4 h-4" />
                     Download PDF
                   </Button>
+                </div>
+              </div>
+            </div>
+
+            {/* Disclaimer (mobile) */}
+            <div className="lg:hidden bg-amber-50 border border-amber-200 rounded-2xl p-6">
+              <div className="flex items-start gap-3">
+                <Shield className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <h4 className="font-semibold text-amber-900 mb-2">Educational Use Only</h4>
+                  <p className="text-amber-800 text-sm leading-relaxed">
+                    This textbook is provided for educational purposes. Please respect copyright laws and use it responsibly for learning.
+                  </p>
                 </div>
               </div>
             </div>
@@ -227,10 +279,10 @@ export default function BookDetailPage({ params }: PageProps) {
 
           {/* Right column - Sidebar */}
           <div className="space-y-6">
-            {/* Book Info Card */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Book Information</h3>
-              <div className="space-y-3">
+            {/* Quick Access */}
+            <div className="hidden lg:block bg-white rounded-2xl shadow-sm border border-gray-200 p-6 space-y-4">
+              <h3 className="text-lg font-bold text-gray-900">Quick Access</h3>
+              <div className="space-y-3 border border-gray-100 rounded-xl p-4 bg-gray-50">
                 <div className="flex justify-between">
                   <span className="text-gray-600">Subject:</span>
                   <span className="font-medium text-gray-900">{book.subject}</span>
@@ -240,11 +292,6 @@ export default function BookDetailPage({ params }: PageProps) {
                   <span className="font-medium text-gray-900">{book.className}</span>
                 </div>
               </div>
-            </div>
-
-            {/* Quick Actions */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Quick Actions</h3>
               <div className="space-y-3">
                 <Button
                   className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"
@@ -273,8 +320,8 @@ export default function BookDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            {/* Disclaimer */}
-            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+            {/* Disclaimer (desktop) */}
+            <div className="hidden lg:block bg-amber-50 border border-amber-200 rounded-2xl p-6">
               <div className="flex items-start gap-3">
                 <Shield className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <div>
@@ -288,6 +335,72 @@ export default function BookDetailPage({ params }: PageProps) {
           </div>
         </div>
       </div>
+
+      {/* Quick Access slider (mobile) */}
+      {quickMounted && (
+        <div className="lg:hidden fixed inset-0 z-50 flex items-center justify-center px-4">
+          <div
+            className={`absolute inset-0 bg-black/40 backdrop-blur-[1px] transition-opacity duration-200 ${
+              quickOpen ? 'opacity-100' : 'opacity-0'
+            }`}
+            onClick={() => setQuickOpen(false)}
+          />
+          <div
+            className={`relative w-[90vw] max-w-sm bg-white rounded-2xl shadow-2xl border border-gray-200 transition-all duration-200 ease-out transform ${
+              quickOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'
+            }`}
+          >
+            <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
+              <h3 className="text-lg font-bold text-gray-900">Quick Access</h3>
+              <button
+                onClick={() => setQuickOpen(false)}
+                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                aria-label="Close quick access"
+              >
+                <X className="w-5 h-5 text-gray-600" />
+              </button>
+            </div>
+            <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
+              <div className="space-y-3 border border-gray-100 rounded-xl p-4 bg-gray-50">
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600">Subject:</span>
+                  <span className="font-medium text-gray-900">{book.subject}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600">Class:</span>
+                  <span className="font-medium text-gray-900">{book.className}</span>
+                </div>
+              </div>
+              <div className="space-y-3">
+                <Button
+                  className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = pdfLink;
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.download = `${book.title}.pdf`;
+                    document.body.appendChild(link);
+                    link.click();
+                    link.remove();
+                  }}
+                >
+                  <Download className="w-4 h-4" />
+                  Download PDF
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"
+                  onClick={() => window.open(pdfLink, '_blank', 'noopener,noreferrer')}
+                >
+                  <Eye className="w-4 h-4" />
+                  View pdf
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
