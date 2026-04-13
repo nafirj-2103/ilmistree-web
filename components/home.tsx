@@ -13,7 +13,7 @@ import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 function RevealWrapper({ children }: { children: React.ReactNode }) {
   const ref = useScrollReveal();
   return (
-    <div ref={ref} className="scroll-reveal">
+    <div ref={ref} className="scroll-reveal revealed">
       {children}
     </div>
   );

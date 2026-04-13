@@ -13,7 +13,7 @@ export function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative w-full overflow-hidden py-10 md:py-0" style={{ height: 'calc(100vh - 93px)' }}>
+    <section id="hero" className="relative w-full overflow-hidden py-8 md:py-8" style={{ minHeight: 'calc(100vh - 93px)' }}>
 
       {/* Background Video */}
       <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
@@ -30,17 +30,17 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-10 lg:px-20 flex flex-col justify-center h-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 flex flex-col justify-center h-full">
  
         {/* Hero Title */}
-        <div className="max-w-3xl">
+        <div className="max-w-[46rem]">
           {/* Welcome to */}
           <p
-            className="mb-3 leading-tight scale-135 md:scale-150 lg:scale-300 origin-left"
+            className="mb-4 leading-tight origin-left"
             style={{
-              fontFamily: 'Arial, Helvetica, sans-serif',
+              fontFamily: 'Godber',
               fontWeight: 400,
-              fontSize: 'clamp(0.875rem, 2vw, 1.125rem)',
+              fontSize: 'clamp(1.50rem, 1.4vw, 1.1rem)',
               WebkitFontSmoothing: 'auto',
               textRendering: 'optimizeSpeed'
             }}
@@ -51,10 +51,10 @@ export function HeroSection() {
 
         {/* ILMISTREE - large red text */}
 <h2
-  className="font-hero-script mb-[-28px] px-6 leading-tight tracking-wide text-[4.2rem] md:mb-[-40px] md:text-[5rem]"
+  className="font-hero-script  px-1 sm:px-2 leading-tight tracking-wide"
   style={{
     fontWeight: 400,
-    fontSize: 'clamp(4rem, 12vw, 5.2rem)',
+    fontSize: 'clamp(3.35rem, 7.2vw, 4.65rem)',
 
     background: 'linear-gradient(to bottom, #99000d, #f82732)',
 
@@ -80,20 +80,20 @@ export function HeroSection() {
   <div className="
   max-w-full
   w-full
-  md:w-fit
+  md:max-w-[44rem]
   backdrop-blur-md
   bg-white/10
   border border-white/20
   border-r-[3px] border-b-[1px]
   rounded-2xl
-  px-4 py-4 md:px-6 md:py-2
+  px-4 py-4 md:px-5 md:py-3
   shadow-xl
   mb-10 ">
-    <h1
-    className="font-hero-display leading-[1.15] mb-0 text-3xl md:text-[3rem]"
+    <h1          
+    className="font-hero-display leading-[1.08] mb-1"
     style={{
       fontWeight: 700,
-      fontSize: 'clamp(2rem, 5.2vw, 3rem)',
+      fontSize: 'clamp(1.85rem, 4.2vw, 2.75rem)',
       color: '#1f2937'
     }}
   >
@@ -102,10 +102,10 @@ export function HeroSection() {
 
   {/* Second Line */}
   <h2
-    className="font-hero-display leading-[1.15] mb-5 text-3xl md:text-[3rem]"
+    className="font-hero-display leading-[1.08] mb-4"
     style={{
       fontWeight: 700,
-      fontSize: 'clamp(2rem, 5.2vw, 3rem)',
+      fontSize: 'clamp(1.85rem, 4.2vw, 2.75rem)',
       color: '#1f2937'
     }}
   >
@@ -113,7 +113,7 @@ export function HeroSection() {
   </h2>
 
   {/* Paragraph */}
-  <div className="flex items-start gap-3 mb-10">
+  <div className="flex items-start gap-3 mb-8">
     <div className="w-1 bg-[#cd141d] rounded-full self-stretch"></div>
 
     <p
@@ -121,7 +121,7 @@ export function HeroSection() {
       style={{
         fontFamily: 'Arial, Helvetica, sans-serif',
         fontWeight: 700,
-        fontSize: 'clamp(0.875rem, 2vw, 1.125rem)',
+        fontSize: 'clamp(0.95rem, 1.45vw, 1.05rem)',
         color: '#374151'
       }}
     >
@@ -151,14 +151,14 @@ export function HeroSection() {
     onClick={() => scrollToSection('courses')}
     onMouseEnter={() => setFloatPaused(true)}
     onMouseLeave={() => setFloatPaused(false)}
-    className="w-1/2 sm:w-auto max-w-xs bg-gradient-to-b from-[#99000dee] to-[#ee1c25] text-white px-8 py-3 h-auto text-base rounded-full font-semibold transition-all duration-300 hover:scale-[1.05] shadow-md animate-float hover:shadow-[0_0_25px_rgba(238,28,37,0.75)] min-h-[44px]"
+    className="w-1/2 sm:w-auto max-w-[12rem] bg-gradient-to-b from-[#99000dee] to-[#ee1c25] text-white px-6 py-3 h-auto text-[0.98rem] rounded-full font-semibold transition-all duration-300 hover:scale-[1.05] shadow-md animate-float hover:shadow-[0_0_25px_rgba(238,28,37,0.75)] min-h-[44px]"
     style={{ animationPlayState: floatPaused ? 'paused' : 'running' }}
   >
     Explore Courses
   </Button>
   <Link
     href="/about"
-    className="w-1/2 sm:w-auto max-w-xs border-2 border-[#cd141d] text-[#cd141d] bg-transparent hover:bg-[#cd141d] hover:text-white px-8 py-3 h-auto text-base rounded-full font-semibold transition-all hover:scale-[1.02] min-h-[44px] text-center"
+    className="w-1/2 sm:w-auto max-w-[12rem] border-2 border-[#cd141d] text-[#cd141d] bg-transparent hover:bg-[#cd141d] hover:text-white px-6 py-3 h-auto text-[0.98rem] rounded-full font-semibold transition-all hover:scale-[1.02] min-h-[44px] text-center"
   >
     Learn More
   </Link>

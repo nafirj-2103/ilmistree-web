@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Milk+and+Honey&display=swap');
+
 /* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
@@ -15,12 +17,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.font-hero-script {
-  font-family: "Brush Script MT", "Segoe Script", cursive;
-}
-
 .font-hero-display {
   font-family: "Arial Black", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.mobile-drawer[open] .mobile-drawer-overlay {
+  display: block;
+}
+
+.mobile-drawer[open] .mobile-drawer-panel {
+  transform: translateX(0);
 }
 
 /* Custom animation */

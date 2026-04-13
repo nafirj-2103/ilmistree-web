@@ -1,12 +1,20 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, Clock, Star, Download } from 'lucide-react';
-import { BookCanvas } from './BookCanvas';
 import { Course, CourseCardProps } from './types'; // or wherever interface is
+
+const BookCanvas = dynamic(
+  () => import('./BookCanvas').then((mod) => mod.BookCanvas),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+);
 
 export function CourseCard({
   course,

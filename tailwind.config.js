@@ -21,6 +21,9 @@ module.exports = {
   		}
   	},
   	extend: {
+  		fontFamily: {
+  			'hero-script': ['"Milk and Honey"', 'cursive']
+  		},
   		colors: {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
