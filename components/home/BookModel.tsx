@@ -18,6 +18,8 @@ export type BookModelProps = {
   scale: number;
   /** vertical position adjustment */
   positionY: number;
+  /** fires once the textured model has been mounted */
+  onReady?: () => void;
 };
 
 /**
@@ -33,11 +35,13 @@ export function BookModel({
   cover,
   scale,
   positionY,
+  onReady,
 }: BookModelProps) {
   const { scene } = useThree();
   const wrapperRef = useRef<THREE.Group | null>(null);
   const stageGroupRef = useRef<THREE.Group | null>(null);
   const bookGroupRef = useRef<THREE.Group | null>(null);
+  const readyRef = useRef(false);
 
   const { scene: stageScene } = useGLTF('/models/bluestage.glb') as any;
   const { scene: bookScene } = useGLTF('/models/book.glb') as any;
@@ -46,6 +50,7 @@ export function BookModel({
 
   useEffect(() => {
     texture.flipY = false;
+    texture.colorSpace = THREE.SRGBColorSpace;
     texture.needsUpdate = true;
 
     // Cleanup texture on unmount
@@ -186,13 +191,18 @@ export function BookModel({
 
     bookGroup.add(cloned);
 
+    if (!readyRef.current) {
+      readyRef.current = true;
+      onReady?.();
+    }
+
     // Prevent re-adding on re-renders
     return () => {
       if (bookGroup.children.length > 0) {
         bookGroup.clear();
       }
     };
-  }, [bookScene, texture, scale, positionY]);
+  }, [bookScene, texture, scale, positionY, onReady]);
 
   // Hover rotation - optimized to reduce performance impact
   useFrame((state, delta) => {

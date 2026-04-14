@@ -21,14 +21,14 @@ body {
 }
 
 .font-hero-script {
-  font-family: "Milk and Honey", "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
+  font-family: var(--font-milk-and-honey), "Segoe Script", "Lucida Handwriting", "Brush Script MT", cursive;
   font-variant-ligatures: none;
   font-feature-settings: "liga" 0, "calt" 0;
   letter-spacing: 0.03em;
 }
 
 .font-welcome {
-  font-family: "Godber", "Avenir Next", "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
+  font-family: var(--font-godber), "Avenir Next", "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
   letter-spacing: 0.01em;
 }
 
