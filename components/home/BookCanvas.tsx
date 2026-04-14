@@ -40,6 +40,13 @@ export function BookCanvas({
   const [isReady, setIsReady] = useState(false);
   const encodedCover = useMemo(() => encodeURI(cover), [cover]);
 
+  // Cleanup on unmount to prevent memory leaks
+  React.useEffect(() => {
+    return () => {
+      setIsReady(false);
+    };
+  }, []);
+
   return (
     <div
       ref={containerRef}

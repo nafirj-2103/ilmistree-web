@@ -36,15 +36,13 @@ export function HeroSection() {
         <div className="max-w-[46rem]">
           {/* Welcome to */}
           <p
-            className="mb-4 leading-tight origin-left"
+            className="font-welcome mb-4 leading-tight"
             style={{
-              fontFamily: 'Godber',
               fontWeight: 400,
               fontSize: 'clamp(1.50rem, 1.4vw, 1.1rem)',
-              WebkitFontSmoothing: 'auto',
-              textRendering: 'optimizeSpeed'
+              WebkitFontSmoothing: 'antialiased',
+              textRendering: 'optimizeLegibility'
             }}
-
           >
             Welcome to
           </p>

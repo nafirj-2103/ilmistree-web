@@ -38,17 +38,20 @@ export function BookModel({
   const wrapperRef = useRef<THREE.Group | null>(null);
   const stageGroupRef = useRef<THREE.Group | null>(null);
   const bookGroupRef = useRef<THREE.Group | null>(null);
-  const cleanupRef = useRef(false);
 
   const { scene: stageScene } = useGLTF('/models/bluestage.glb') as any;
   const { scene: bookScene } = useGLTF('/models/book.glb') as any;
 
-  useTexture.preload(cover);
   const texture = useTexture(cover);
 
   useEffect(() => {
     texture.flipY = false;
     texture.needsUpdate = true;
+
+    // Cleanup texture on unmount
+    return () => {
+      texture.dispose();
+    };
   }, [texture]);
 
   // Create all Three.js objects imperatively
@@ -83,24 +86,29 @@ export function BookModel({
     bookGroupRef.current = bookGroup;
 
     return () => {
-      scene.remove(wrapper);
-      wrapper.traverse((obj) => {
-        if (obj instanceof THREE.Mesh) {
-          obj.geometry?.dispose();
-          if (Array.isArray(obj.material)) {
-            obj.material.forEach((m: THREE.Material) => m.dispose());
-          } else {
-            obj.material?.dispose();
+      if (scene && wrapper) {
+        scene.remove(wrapper);
+        wrapper.traverse((obj) => {
+          if (obj instanceof THREE.Mesh) {
+            obj.geometry?.dispose();
+            if (Array.isArray(obj.material)) {
+              obj.material.forEach((m: THREE.Material) => m.dispose());
+            } else {
+              obj.material?.dispose();
+            }
           }
-        }
-      });
+          if (obj instanceof THREE.Light) {
+            // Light cleanup is handled automatically by Three.js
+          }
+        });
+      }
       wrapperRef.current = null;
       stageGroupRef.current = null;
       bookGroupRef.current = null;
     };
   }, [scene]);
 
-  // Add stage model
+  // Add stage model - prevent multiple additions
   useEffect(() => {
     const stageGroup = stageGroupRef.current;
     if (!stageScene || !stageGroup || stageGroup.children.length > 0) return;
@@ -121,9 +129,16 @@ export function BookModel({
     cloned.position.sub(center);
     cloned.position.y += size.y / 15;
     stageGroup.add(cloned);
+
+    // Prevent re-adding on re-renders
+    return () => {
+      if (stageGroup.children.length > 0) {
+        stageGroup.clear();
+      }
+    };
   }, [stageScene]);
 
-  // Add book model
+  // Add book model - prevent multiple additions
   useEffect(() => {
     const bookGroup = bookGroupRef.current;
     if (!bookScene || !bookGroup || bookGroup.children.length > 0) return;
@@ -170,24 +185,35 @@ export function BookModel({
     cloned.rotation.set(0, 0, 0);
 
     bookGroup.add(cloned);
+
+    // Prevent re-adding on re-renders
+    return () => {
+      if (bookGroup.children.length > 0) {
+        bookGroup.clear();
+      }
+    };
   }, [bookScene, texture, scale, positionY]);
 
-  // Hover rotation
-  useFrame(() => {
+  // Hover rotation - optimized to reduce performance impact
+  useFrame((state, delta) => {
     const bookGroup = bookGroupRef.current;
     if (!bookGroup) return;
+
+    // Limit frame rate for smoother performance
+    if (delta > 1/30) return; // Skip frames if running slower than 30fps
+
     const targetY = pointer.x * 3;
     const targetX = pointer.y * 2;
 
     bookGroup.rotation.x = THREE.MathUtils.lerp(
       bookGroup.rotation.x,
       targetX,
-      0.1
+      0.08 // Slightly slower lerp for better performance
     );
     bookGroup.rotation.y = THREE.MathUtils.lerp(
       bookGroup.rotation.y,
       targetY,
-      0.1
+      0.08
     );
   });
 

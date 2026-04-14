@@ -11,37 +11,27 @@ import { RecentlyAddedSection } from '../components/home/RecentlyAddedSection';
 import { AboutShortSection } from '../components/home/AboutShortSection';
 import { ContactSection } from '../components/home/ContactSection';
 import { Footer } from '../components/home/Footer';
-import { useScrollReveal } from '../hooks/use-scroll-reveal';
-
-function RevealWrapper({ children }: { children: React.ReactNode }) {
-  const ref = useScrollReveal();
-  return (
-    <div ref={ref} className="scroll-reveal revealed">
-      {children}
-    </div>
-  );
-}
 
 export default function Home() {
   return (
     <div className="w-full min-h-screen bg-white">
       <Header />
       <SecondaryNavbar />
-      <RevealWrapper><HeroSection /></RevealWrapper>
+      <HeroSection />
 
       {/* Uniform vertical spacing between main sections */}
       <div className="space-y-24 md:space-y-28 mt-24 md:mt-28">
-        <RevealWrapper><AboutShortSection /></RevealWrapper>
-        <RevealWrapper><CoursesSection /></RevealWrapper>
-        <RevealWrapper><FeaturesSection /></RevealWrapper>
-        <RevealWrapper><ResourcesSection /></RevealWrapper>
-        <RevealWrapper><RecentlyAddedSection /></RevealWrapper>
+        <AboutShortSection />
+        <CoursesSection />
+        <FeaturesSection />
+        <ResourcesSection />
+        <RecentlyAddedSection />
       </div>
 
       {/* Contact + Footer kept tight together without extra vertical gap */}
       <div className="mt-24 md:mt-28 space-y-0">
-        <RevealWrapper><ContactSection /></RevealWrapper>
-        <RevealWrapper><Footer /></RevealWrapper>
+        <ContactSection />
+        <Footer />
       </div>
     </div>
   )

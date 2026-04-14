@@ -34,9 +34,16 @@ export function CourseCard({
   const [descOverflow, setDescOverflow] = useState(false);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
+  const pointerThrottleRef = useRef<number>(0);
 
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!useModel || !modelInteractive) return;
+
+    // Throttle pointer updates to reduce performance impact
+    const now = Date.now();
+    if (now - pointerThrottleRef.current < 16) return; // ~60fps limit
+    pointerThrottleRef.current = now;
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
     const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
