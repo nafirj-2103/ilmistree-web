@@ -15,15 +15,15 @@ export function HeroSection() {
   return (
     <section id="hero" className="relative w-full overflow-hidden py-8 md:py-8" style={{ minHeight: 'calc(100vh - 93px)' }}>
 
-      {/* Background Video */}
-      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden">
+
+      <div className="absolute inset-0 z-0 w-full h-full overflow-hidden blur-sm-white">
         <video
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center blur-sm opacity-50"
+className="w-full h-full object-cover object-center blur-sm opacity-50" onEnded={(e) => e.currentTarget.play()}
         >
           <source src="/movecircle.mp4" type="video/mp4" />
         </video>
