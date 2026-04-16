@@ -3,7 +3,13 @@
 import { useRef, createElement } from "react";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
+import { useGLTF } from "@react-three/drei";
+import { usePathname } from "next/navigation";
 import { BookModel } from "./BookModel";
+
+// Preload GLTF models at top level
+useGLTF.preload("/models/book.glb");
+useGLTF.preload("/models/bluestage.glb");
 
 export type BookCanvasInnerProps = {
   pointer: { x: number; y: number };
@@ -14,11 +20,6 @@ export type BookCanvasInnerProps = {
   onReady?: () => void;
 };
 
-/**
- * Uses React.createElement instead of JSX for all children inside <Canvas>
- * to prevent Tempo's JSX annotation transform from injecting `tempoelementid`
- * props into components rendered by R3F's custom reconciler.
- */
 export function BookCanvasInner({
   pointer,
   cover,
@@ -27,9 +28,9 @@ export function BookCanvasInner({
   positionY,
   onReady,
 }: BookCanvasInnerProps) {
+  const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Build the Canvas children via createElement to bypass Tempo annotation
   const canvasChildren = createElement(BookModel, {
     pointer,
     cover,
@@ -43,10 +44,15 @@ export function BookCanvasInner({
       {createElement(
         Canvas,
         {
+          key: pathname,
           camera: { position: [1, 1, cameraZ] as [number, number, number], fov: 50 },
           flat: true,
+          gl: { 
+            antialias: true,
+            preserveDrawingBuffer: true
+          },
+          dpr: [1, 2],
           style: { width: "100%", height: "100%" },
-          gl: { antialias: true },
           onCreated: ({ scene }: { scene: THREE.Scene }) => {
             scene.background = new THREE.Color("#e0e0e0");
             const ambient = new THREE.AmbientLight(0xffffff, 0.7);
@@ -61,3 +67,4 @@ export function BookCanvasInner({
     </div>
   );
 }
+

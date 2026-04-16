@@ -180,13 +180,19 @@ export default function Class9Page() {
       </section>
 
       <section className="max-w-7xl mx-auto px-6 pt-16 pb-24">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 relative">
           <h2 className="text-4xl md:text-5xl font-bold text-[#D32F2F] mb-4">
             Popular Courses
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover our most sought-after courses designed by industry experts and academic leaders
           </p>
+          <Button
+            variant="outline"
+            className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white absolute right-0 top-0 px-5 py-2 text-sm rounded-lg font-semibold transition-all hover:scale-105"
+          >
+            View All Courses
+          </Button>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">

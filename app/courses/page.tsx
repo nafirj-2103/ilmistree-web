@@ -8,9 +8,9 @@ const classes = [
   {
     number: '9',
     label: '9th Class',
-    description: 'All PCTB Textbooks for Class 9 — Science & Arts groups.',
+    description: 'All PCTB Textbooks for Class 9 Science & Arts groups.',
     href: '/courses/class-9',
-    badge: 'Popular',
+    badge:  'Popular',
     badgeColor: 'bg-orange-500',
     subjects: ['Physics', 'Chemistry', 'Biology', 'Math', 'Urdu', 'English'],
   },
@@ -26,7 +26,7 @@ const classes = [
   {
     number: '11',
     label: '11th Class',
-    description: 'FSc Part 1 — All PCTB Textbooks for Class 11.',
+    description: 'FSc Part 1  All PCTB Textbooks for Class 11.',
     href: '/courses/class-11',
     badge: 'New',
     badgeColor: 'bg-green-500',
@@ -35,13 +35,15 @@ const classes = [
   {
     number: '12',
     label: '12th Class',
-    description: 'FSc Part 2 — All PCTB Textbooks for Class 12.',
+    description: 'FSc Part 2  All PCTB Textbooks for Class 12.',
     href: '/courses/class-12',
     badge: 'New',
     badgeColor: 'bg-green-500',
     subjects: ['Physics', 'Chemistry', 'Biology', 'Math', 'Urdu', 'English'],
   },
 ];
+
+
 
 export default function CoursesPage() {
   return (
@@ -91,20 +93,20 @@ export default function CoursesPage() {
               className="group relative bg-white rounded-2xl shadow-md border border-gray-100 p-6 flex flex-col gap-4 hover:shadow-xl hover:scale-[1.03] transition-all duration-300 hover:border-[#D32F2F]/30"
             >
               {/* Badge */}
-              <span className={`absolute top-4 right-4 ${cls.badgeColor} text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full leading-none`}>
-                {cls.badge}
-              </span>
+                <span className={`absolute top-6 right-4 sm:top-4 sm:mt-0 ${cls.badgeColor} text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full leading-none`}>
+                  {cls.badge}
+                </span>
 
               {/* Icon + Number */}
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-[#D32F2F]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#D32F2F]/20 transition-colors">
-                  <BookOpen className="w-6 h-6 text-[#D32F2F]" />
+                <div className="flex items-center gap-3 mt-4 sm:mt-2">
+                  <div className="w-12 h-12 rounded-xl bg-[#D32F2F]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#D32F2F]/20 transition-colors">
+                    <BookOpen className="w-6 h-6 text-[#D32F2F]" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Class</p>
+                    <p className="text-4xl font-black text-[#D32F2F] leading-none">{cls.number}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-xs text-gray-400 font-medium uppercase tracking-wider">Class</p>
-                  <p className="text-4xl font-black text-[#D32F2F] leading-none">{cls.number}</p>
-                </div>
-              </div>
 
               {/* Label & Description */}
               <div>

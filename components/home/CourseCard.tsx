@@ -177,7 +177,7 @@ export function CourseCard({
 
         <Button
           onClick={handlePrimaryClick}
-          className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 group-hover:scale-105 text-xs sm:text-sm py-1.5 md:py-2 leading-tight"
+          className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white rounded-full font-semibold transition-all flex items-center justify-center gap-2 group-hover:scale-105 text-xs sm:text-sm py-2.5 md:py-3 leading-tight px-6"
         >
           View & Download
           <ArrowRight className="w-4 h-4" />

@@ -129,7 +129,7 @@ export function CoursesSection() {
         <div className="text-center">
           <Button
             variant="outline"
-            className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-8 py-6 text-lg rounded-lg font-semibold transition-all hover:scale-105"
+            className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-6 py-3 text-base rounded-lg font-semibold transition-all hover:scale-105 -mt-4"
           >
             View All Courses
           </Button>
