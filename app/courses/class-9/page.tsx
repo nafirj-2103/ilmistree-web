@@ -1,14 +1,13 @@
 'use client';
 
-import React from 'react';
-import { Header } from '@/components/home/Header';
-import { Footer } from '@/components/home/Footer';
-import { CourseCard } from '@/components/home/CourseCard';
-import { Course } from '@/components/home/types';
-import { BookOpen, Download, Star, GraduationCap } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
-import Link from 'next/link';
+import React from "react";
+import { CourseCard } from "@/components/home/CourseCard";
+import { Course } from "@/components/home/types";
+import { Header } from "@/components/home/Header";
+import { Footer } from "@/components/home/Footer";
+import { BookOpen, Download, Star, GraduationCap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/shared/Breadcrumbs";
 
 const courses: Course[] = [
   {
@@ -113,8 +112,6 @@ const courses: Course[] = [
 ];
 
 export default function Class9Page() {
-  const hasCourses = courses.length > 0;
-
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -138,20 +135,20 @@ export default function Class9Page() {
 
             <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
               9th Class Textbooks{' '}
-              <span className="text-[#ee1c25]">  PDF - All Subjects</span>
+              <span className="text-[#ee1c25]">PDF - All Subjects</span>
             </h1>
 
             <div className="flex items-start gap-3 mb-8">
               <div className="w-1 min-h-full bg-[#ee1c25] rounded-full self-stretch mt-1" />
               <p className="text-gray-300 text-base leading-relaxed">
-                Students can easily access official Punjab Curriculum &amp; Textbook Board (PCTB)
+                Students can easily access official Punjab Curriculum & Textbook Board (PCTB)
                 9th class digital PDFs. Physics, Chemistry, Mathematics, Biology, Computer Science,
                 English, Urdu, and Islamiat all in one place for quick viewing and download.
               </p>
             </div>
 
             <div className="flex flex-wrap gap-2">
-              {['Physics', 'Maths', 'Biology', 'Chemistry', 'Computer', 'English', 'Urdu', 'Islamiat'].map((sub) => (
+              {["Physics", "Maths", "Biology", "Chemistry", "Computer", "English", "Urdu", "Islamiat"].map((sub) => (
                 <span
                   key={sub}
                   className="px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/80 border border-white/15 hover:bg-[#ee1c25]/30 hover:border-[#ee1c25]/60 transition-colors cursor-default"
@@ -164,10 +161,10 @@ export default function Class9Page() {
 
           <div className="flex-shrink-0 grid grid-cols-2 gap-4">
             {[
-              { icon: <BookOpen className="w-5 h-5 text-[#ee1c25]" />, value: '9+', label: 'Subjects' },
-              { icon: <Download className="w-5 h-5 text-[#ee1c25]" />, value: '80K+', label: 'Downloads' },
-              { icon: <Star className="w-5 h-5 text-[#ee1c25]" />, value: '4.7★', label: 'Avg Rating' },
-              { icon: <GraduationCap className="w-5 h-5 text-[#ee1c25]" />, value: 'Free', label: 'Always' },
+              { icon: <BookOpen className="w-5 h-5 text-[#ee1c25]" />, value: "9+", label: "Subjects" },
+              { icon: <Download className="w-5 h-5 text-[#ee1c25]" />, value: "80K+", label: "Downloads" },
+              { icon: <Star className="w-5 h-5 text-[#ee1c25]" />, value: "4.7★", label: "Avg Rating" },
+              { icon: <GraduationCap className="w-5 h-5 text-[#ee1c25]" />, value: "Free", label: "Always" },
             ].map((stat) => (
               <div
                 key={stat.label}
@@ -182,35 +179,34 @@ export default function Class9Page() {
         </div>
       </section>
 
-      {hasCourses && (
-        <section className="max-w-7xl mx-auto px-6 pt-16 pb-24">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#D32F2F] mb-4">
-              Popular Courses
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Discover our most sought-after courses designed by industry experts and academic leaders
-            </p>
-          </div>
+      <section className="max-w-7xl mx-auto px-6 pt-16 pb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#D32F2F] mb-4">
+            Popular Courses
+          </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Discover our most sought-after courses designed by industry experts and academic leaders
+          </p>
+        </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
-            {courses.map((course) => (
-              <CourseCard key={course.id} course={course} useModel={true} />
-            ))}
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+          {courses.map((course) => (
+            <CourseCard key={course.id} course={course} useModel={true} />
+          ))}
+        </div>
 
-          <div className="text-center">
-            <Button
-              variant="outline"
-              className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-8 py-6 text-lg rounded-lg font-semibold transition-all hover:scale-105"
-            >
-              View All Courses
-            </Button>
-          </div>
-        </section>
-      )}
+        <div className="text-center">
+          <Button
+            variant="outline"
+            className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-8 py-6 text-lg rounded-lg font-semibold transition-all hover:scale-105"
+          >
+            View All Courses
+          </Button>
+        </div>
+      </section>
 
       <Footer />
     </div>
   );
 }
+

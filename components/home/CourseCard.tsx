@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, Clock, Star, Download } from 'lucide-react';
-import { Course, CourseCardProps } from './types'; // or wherever interface is
+import { Course, CourseCardProps } from './types';
 
 const BookCanvas = dynamic(
   () => import('./BookCanvas').then((mod) => mod.BookCanvas),
@@ -26,7 +26,6 @@ export function CourseCard({
   onTouchEnd,
 }: CourseCardProps) {
   const router = useRouter();
-  // pointer coordinates normalized to [-1,1] where (0,0) is center
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
   const [titleExpanded, setTitleExpanded] = useState(false);
   const [descExpanded, setDescExpanded] = useState(false);
@@ -39,9 +38,8 @@ export function CourseCard({
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!useModel || !modelInteractive) return;
 
-    // Throttle pointer updates to reduce performance impact
     const now = Date.now();
-    if (now - pointerThrottleRef.current < 16) return; // ~60fps limit
+    if (now - pointerThrottleRef.current < 16) return;
     pointerThrottleRef.current = now;
 
     const rect = e.currentTarget.getBoundingClientRect();
@@ -87,8 +85,8 @@ export function CourseCard({
     };
 
     checkOverflow();
-    window.addEventListener('resize', checkOverflow);
-    return () => window.removeEventListener('resize', checkOverflow);
+    window.addEventListener("resize", checkOverflow);
+    return () => window.removeEventListener("resize", checkOverflow);
   }, [course.title, course.description]);
 
   return (
@@ -179,7 +177,7 @@ export function CourseCard({
 
         <Button
           onClick={handlePrimaryClick}
-          className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 group-hover:scale-105 text-sm sm:text-base py-2.5 md:py-3"
+          className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white rounded-lg font-semibold transition-all flex items-center justify-center gap-2 group-hover:scale-105 text-xs sm:text-sm py-1.5 md:py-2 leading-tight"
         >
           View & Download
           <ArrowRight className="w-4 h-4" />
@@ -188,3 +186,4 @@ export function CourseCard({
     </Card>
   );
 }
+

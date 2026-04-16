@@ -74,9 +74,9 @@ export function Header() {
               <Link href="/" className="font-medium text-gray-700 hover:text-[#D32F2F]">Home</Link>
               <Link href="/about" className="font-medium text-gray-700 hover:text-[#D32F2F]">About</Link>
               <Link href="/courses" className="font-medium text-gray-700 hover:text-[#D32F2F]">Courses</Link>
-              <button onClick={() => scrollOrNavigate('contact')} className="font-medium text-gray-700 hover:text-[#D32F2F]">
-                Contact
-              </button>
+
+              <button onClick={() => scrollOrNavigate('contact')} className="font-medium text-gray-700 hover:text-[#D32F2F]">Contact</button>
+
             </nav>
 
             <Button
@@ -138,12 +138,14 @@ export function Header() {
                   Courses
                 </Link>
 
+
                 <button
                   onClick={() => scrollOrNavigate('contact')}
-                  className="border-b py-3 text-left font-semibold"
+                  className="border-b py-3 font-semibold text-left"
                 >
                   Contact
                 </button>
+
 
                 <button
                   onClick={() => scrollOrNavigate('courses')}
