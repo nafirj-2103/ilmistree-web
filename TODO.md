@@ -1,19 +1,7 @@
-# ReadMore "..." Feature for Mobile Cards - app/courses/page.tsx
+# Task: Update HeroSection "Explore Courses" button to link to /courses
 
 ## Steps:
-- [x] Step 1: Create InlineReadMore component inside CoursesPage
-- [x] Step 2: Update the 4 class cards to use ReadMore for description
-
-## Steps:
-- [x] Step 1: Create InlineReadMore component inside CoursesPage
-- [x] Step 2: Update the 4 class cards to use ReadMore for description
-- [x] Step 3: Test responsive behavior (mobile truncate, desktop full)
-- [x] Step 4: Verify smooth slide animation and no layout breaks
-- [x] Step 5: Complete task ✅
-
-**Feature implemented successfully!**
-
-* Mobile: Shows first 3 words + "..." clickable, expands remaining text with smooth slide-down.
-* Desktop: Full text always visible (no truncation).
-* All 4 cards updated, layout intact.
-* Test: Visit http://localhost:3000/courses and resize browser/inspect mobile view.*
+- [x] Step 1: Create TODO.md (current)
+- [x] Step 2: Edit components/home/HeroSection.tsx - Wrap Button in Link href="/courses", remove conflicting onClick/hover handlers
+- [x] Step 3: Test navigation
+- [x] Step 4: Mark complete

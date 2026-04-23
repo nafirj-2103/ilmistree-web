@@ -87,9 +87,9 @@ export function Footer() {
             <h3 className="text-lg font-bold mb-4">Support</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-white/80 hover:text-white transition-colors">
-                  Help Center
-                </a>
+                <Link href="/copyrights" className="text-white/80 hover:text-white transition-colors">
+                  DMCA & Copyrights
+                </Link>
               </li>
               <li>
                 <a href="#" className="text-white/80 hover:text-white transition-colors">

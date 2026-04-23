@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
@@ -20,7 +20,6 @@ import {
   Mail,
   GraduationCap,
   ChevronRight,
-  X,
 } from 'lucide-react';
 
 interface PageProps {
@@ -34,21 +33,9 @@ export default function BookDetailPage({ params }: PageProps) {
   const router = useRouter();
   const book = slug ? bookDetails[slug] : undefined;
   const pdfLink = book?.pdfUrl ?? 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
+  const previewLink = book?.previewUrl ?? pdfLink;
   const [sliderOpen, setSliderOpen] = useState(false);
-  const [quickOpen, setQuickOpen] = useState(false);
-  const [quickMounted, setQuickMounted] = useState(false);
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    if (quickOpen) setQuickMounted(true);
-  }, [quickOpen]);
-
-  useEffect(() => {
-    if (!quickOpen && quickMounted) {
-      const t = setTimeout(() => setQuickMounted(false), 220);
-      return () => clearTimeout(t);
-    }
-  }, [quickOpen, quickMounted]);
 
   if (!book) {
     return (
@@ -73,6 +60,68 @@ export default function BookDetailPage({ params }: PageProps) {
       </div>
     );
   }
+
+  const quickAccessCard = (
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 space-y-4">
+      <h3 className="text-lg font-bold text-gray-900">Quick Access</h3>
+      <div className="space-y-3 border border-gray-100 rounded-xl p-4 bg-gray-50">
+        <div className="flex justify-between">
+          <span className="text-gray-600">Subject:</span>
+          <span className="font-medium text-gray-900">{book.subject}</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-gray-600">Class:</span>
+          <span className="font-medium text-gray-900">{book.className}</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-gray-600">Medium:</span>
+          <span className="font-medium text-gray-900">English Medium</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-gray-600">Board:</span>
+          <span className="font-medium text-gray-900">Punjab Board</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-gray-600">Format:</span>
+          <span className="font-medium text-gray-900">PDF</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-gray-600">File Size:</span>
+          <span className="font-medium text-gray-900">54.6 MB</span>
+        </div>
+        <div className="flex justify-between">
+          <span className="text-gray-600">Syllabus:</span>
+          <span className="font-medium text-gray-900">Current 2026</span>
+        </div>
+      </div>
+      <div className="space-y-3">
+        <Button
+          className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"
+          onClick={() => {
+            const link = document.createElement('a');
+            link.href = pdfLink;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.download = `${book.title}.pdf`;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+          }}
+        >
+          <Download className="w-4 h-4" />
+          Download PDF
+        </Button>
+        <Button
+          variant="outline"
+          className="w-full border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"
+          onClick={() => window.open(previewLink, '_blank', 'noopener,noreferrer')}
+        >
+          <Eye className="w-4 h-4" />
+          View pdf
+        </Button>
+      </div>
+    </div>
+  );
 
   return (
     <div className="w-full min-h-screen bg-gray-50">
@@ -183,43 +232,12 @@ export default function BookDetailPage({ params }: PageProps) {
                     alt={`${book.subject} cover`}
                     className="absolute inset-0 w-[500px] h-full object-cover object-right"
                   />
-
-
-                </div>
-                <div className="flex gap-3 mt-6 justify-center md:justify-start">
-                  <Button
-                    className="bg-[#D32F2F] hover:bg-[#8B1A1A] text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 shadow-md hover:shadow-lg transition-all"
-                    onClick={() => window.open(pdfLink, '_blank', 'noopener,noreferrer')}
-                  >
-                    <Eye className="w-4 h-4" />
-                    View online
-                  </Button>
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      const isMobile =
-                        typeof window !== 'undefined' &&
-                        window.matchMedia('(max-width: 1023px)').matches;
-                      if (isMobile) {
-                        setQuickOpen(true);
-                        return;
-                      }
-                      const link = document.createElement('a');
-                      link.href = pdfLink;
-                      link.target = '_blank';
-                      link.rel = 'noopener noreferrer';
-                      link.download = `${book.title}.pdf`;
-                      document.body.appendChild(link);
-                      link.click();
-                      link.remove();
-                    }}
-                    className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-6 py-2.5 rounded-lg font-semibold flex items-center gap-2 transition-all text-center md:text-left"
-                  >
-                    <Download className="w-4 h-4" />
-                    Download PDF
-                  </Button>
                 </div>
               </div>
+            </div>
+
+            <div className="lg:hidden">
+              {quickAccessCard}
             </div>
 
             {/* Disclaimer (mobile) */}
@@ -280,44 +298,8 @@ export default function BookDetailPage({ params }: PageProps) {
           {/* Right column - Sidebar */}
           <div className="space-y-6">
             {/* Quick Access */}
-            <div className="hidden lg:block bg-white rounded-2xl shadow-sm border border-gray-200 p-6 space-y-4">
-              <h3 className="text-lg font-bold text-gray-900">Quick Access</h3>
-              <div className="space-y-3 border border-gray-100 rounded-xl p-4 bg-gray-50">
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Subject:</span>
-                  <span className="font-medium text-gray-900">{book.subject}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Class:</span>
-                  <span className="font-medium text-gray-900">{book.className}</span>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <Button
-                  className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = pdfLink;
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                    link.download = `${book.title}.pdf`;
-                    document.body.appendChild(link);
-                    link.click();
-                    link.remove();
-                  }}
-                >
-                  <Download className="w-4 h-4" />
-                  Download PDF
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"
-                  onClick={() => window.open(pdfLink, '_blank', 'noopener,noreferrer')}
-                >
-                  <Eye className="w-4 h-4" />
-                  View pdf
-                </Button>
-              </div>
+            <div className="hidden lg:block">
+              {quickAccessCard}
             </div>
 
             {/* Disclaimer (desktop) */}
@@ -335,72 +317,6 @@ export default function BookDetailPage({ params }: PageProps) {
           </div>
         </div>
       </div>
-
-      {/* Quick Access slider (mobile) */}
-      {quickMounted && (
-        <div className="lg:hidden fixed inset-0 z-50 flex items-center justify-center px-4">
-          <div
-            className={`absolute inset-0 bg-black/40 backdrop-blur-[1px] transition-opacity duration-200 ${
-              quickOpen ? 'opacity-100' : 'opacity-0'
-            }`}
-            onClick={() => setQuickOpen(false)}
-          />
-          <div
-            className={`relative w-[90vw] max-w-sm bg-white rounded-2xl shadow-2xl border border-gray-200 transition-all duration-200 ease-out transform ${
-              quickOpen ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'
-            }`}
-          >
-            <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100">
-              <h3 className="text-lg font-bold text-gray-900">Quick Access</h3>
-              <button
-                onClick={() => setQuickOpen(false)}
-                className="p-2 rounded-full hover:bg-gray-100 transition-colors"
-                aria-label="Close quick access"
-              >
-                <X className="w-5 h-5 text-gray-600" />
-              </button>
-            </div>
-            <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
-              <div className="space-y-3 border border-gray-100 rounded-xl p-4 bg-gray-50">
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Subject:</span>
-                  <span className="font-medium text-gray-900">{book.subject}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-gray-600">Class:</span>
-                  <span className="font-medium text-gray-900">{book.className}</span>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <Button
-                  className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"
-                  onClick={() => {
-                    const link = document.createElement('a');
-                    link.href = pdfLink;
-                    link.target = '_blank';
-                    link.rel = 'noopener noreferrer';
-                    link.download = `${book.title}.pdf`;
-                    document.body.appendChild(link);
-                    link.click();
-                    link.remove();
-                  }}
-                >
-                  <Download className="w-4 h-4" />
-                  Download PDF
-                </Button>
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"
-                  onClick={() => window.open(pdfLink, '_blank', 'noopener,noreferrer')}
-                >
-                  <Eye className="w-4 h-4" />
-                  View pdf
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </div>

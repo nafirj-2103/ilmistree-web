@@ -187,27 +187,12 @@ export default function Class9Page() {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover our most sought-after courses designed by industry experts and academic leaders
           </p>
-          <Button
-            variant="outline"
-            className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white absolute right-0 top-0 px-5 py-2 text-sm rounded-lg font-semibold transition-all hover:scale-105"
-          >
-            View All Courses
-          </Button>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {courses.map((course) => (
             <CourseCard key={course.id} course={course} useModel={true} />
           ))}
-        </div>
-
-        <div className="text-center">
-          <Button
-            variant="outline"
-            className="border-2 border-[#D32F2F] text-[#D32F2F] hover:bg-[#D32F2F] hover:text-white px-8 py-6 text-lg rounded-lg font-semibold transition-all hover:scale-105"
-          >
-            View All Courses
-          </Button>
         </div>
       </section>
 

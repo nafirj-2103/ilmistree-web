@@ -145,15 +145,13 @@ className="w-full h-full object-cover object-center blur-sm opacity-50" onEnded=
 
 {/* CTA Buttons */}
 <div className="flex flex-row items-center gap-3 w-full justify-center sm:justify-start">
-  <Button
-    onClick={() => scrollToSection('courses')}
-    onMouseEnter={() => setFloatPaused(true)}
-    onMouseLeave={() => setFloatPaused(false)}
-    className="w-1/2 sm:w-auto max-w-[12rem] bg-gradient-to-b from-[#99000dee] to-[#ee1c25] text-white px-6 py-3 h-auto text-[0.98rem] rounded-full font-semibold transition-all duration-300 hover:scale-[1.05] shadow-md animate-float hover:shadow-[0_0_25px_rgba(238,28,37,0.75)] min-h-[44px]"
-    style={{ animationPlayState: floatPaused ? 'paused' : 'running' }}
-  >
-    Explore Courses
-  </Button>
+  <Link href="/courses">
+    <Button
+      className="w-1/2 sm:w-auto max-w-[12rem] bg-gradient-to-b from-[#99000dee] to-[#ee1c25] text-white px-6 py-3 h-auto text-[0.98rem] rounded-full font-semibold transition-all duration-300 hover:scale-[1.05] shadow-md animate-float hover:shadow-[0_0_25px_rgba(238,28,37,0.75)] min-h-[44px]"
+    >
+      Explore Courses
+    </Button>
+  </Link>
   <Link
     href="/about"
     className="w-1/2 sm:w-auto max-w-[12rem] border-2 border-[#cd141d] text-[#cd141d] bg-transparent hover:bg-[#cd141d] hover:text-white px-6 py-3 h-auto text-[0.98rem] rounded-full font-semibold transition-all hover:scale-[1.02] min-h-[44px] text-center"

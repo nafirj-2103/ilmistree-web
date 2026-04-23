@@ -13,6 +13,7 @@ export interface BookDetail {
   removalRequest: string;
   acknowledgement: string;
   pdfUrl: string;
+  previewUrl?: string;
 }
 
 const DEFAULT_PDF =
@@ -214,7 +215,10 @@ export const bookDetails: Record<string, BookDetail> = {
       'If you are the rightful owner of this content and prefer it not to be available here, kindly reach out to us. We commit to reviewing your request carefully and removing the material as soon as possible after confirmation.',
     acknowledgement:
       'We are grateful to the technology educators and the PCTB team who developed this textbook. Their work equips students with essential digital skills that are increasingly important in today\'s world.',
-    pdfUrl: DEFAULT_PDF,
+    pdfUrl:
+      'https://drive.google.com/uc?export=download&id=1YQNpbrn0gTJddb2mB7bAZJBiH8iqJ0cW',
+    previewUrl:
+      'https://drive.google.com/file/d/1YQNpbrn0gTJddb2mB7bAZJBiH8iqJ0cW/preview',
   },
   '9th-class-english-grammar': {
     slug: '9th-class-english-grammar',

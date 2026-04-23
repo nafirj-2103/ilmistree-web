@@ -22,8 +22,8 @@ interface BookSlidePanelProps {
 export function BookSlidePanel({ isOpen, onClose, book }: BookSlidePanelProps) {
   const router = useRouter();
   const panelRef = useRef<HTMLDivElement>(null);
-  const slug = book?.slug ?? null;
   const pdfLink = book?.pdfUrl ?? null;
+  const previewLink = book?.previewUrl ?? pdfLink;
 
   // Close on Escape key
   useEffect(() => {
@@ -41,8 +41,8 @@ export function BookSlidePanel({ isOpen, onClose, book }: BookSlidePanelProps) {
   }, [isOpen, onClose]);
 
   const handlePreview = () => {
-    if (!pdfLink) return;
-    window.open(pdfLink, '_blank', 'noopener,noreferrer');
+    if (!previewLink) return;
+    window.open(previewLink, '_blank', 'noopener,noreferrer');
   };
 
   const handleViewMore = () => {
