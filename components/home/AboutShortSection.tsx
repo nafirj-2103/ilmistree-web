@@ -32,12 +32,11 @@ export function AboutShortSection() {
             About <span className="text-[#ee1c25]">Ilmistree</span>
           </h1>
           <p className="text-base md:text-lg text-white/85 leading-relaxed text-center md:text-left">
-            Ilmistree is a digital platform built to help students and teachers access free textbooks, notes, and learning
-            resources anytime, anywhere. We’re focused on keeping education open, organized, and easy to reach.
+           Ilmistree is a digital platform that helps teachers and students learn. We want to make educational materials available to everyone. Our main aim is to help students share information and find useful study materials.Ilmistree simply helps people to learn by giving them a place to get e-books, notes and learning materials at any time and from anywhere.
           </p>
-          <p className="text-base md:text-lg text-white/85 leading-relaxed text-center md:text-left">
-            Most of our materials are open educational resources, gathered to support learners without barriers. We respect content
-            owners and promptly address removal requests.
+          <p>
+           Ilmistree wants to help students and teachers. They want to give students and teachers the things they need.Ilmistree is doing a lot of work to make sure students and teachers can get to these things easily. Ilmistree wants to make it simple for students and teachers to use these tools.
+          
           </p>
           <div className="flex justify-center md:justify-start">
             <Link

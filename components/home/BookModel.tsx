@@ -52,11 +52,6 @@ export function BookModel({
     texture.flipY = false;
     texture.colorSpace = THREE.SRGBColorSpace;
     texture.needsUpdate = true;
-
-    // Cleanup texture on unmount
-    return () => {
-      texture.dispose();
-    };
   }, [texture]);
 
   // Create all Three.js objects imperatively

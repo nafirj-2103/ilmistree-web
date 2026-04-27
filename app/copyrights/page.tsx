@@ -9,104 +9,98 @@ import { Footer } from '../../components/home/Footer';
 const sections = [
   {
     title: '1. Our Approach to Content',
-    body: `Ilmistree is an educational platform designed to help students access learning materials easily. We do not intentionally host or promote content that violates copyright laws.
+    body: `Ilmistree is an educational platform designed to help students access learning materials easily. We do not purposefully display or promote content which violates copyright laws.
 
-Some materials available on the internet may be:
-• shared by third parties
-• publicly accessible
-• distributed under open or flexible licenses
+Some documents which may be found online:
+- shared by third parties
+- publicly accessible
+- distributed under open or flexible licenses
 
 Where applicable, certain resources may fall under licensing models such as:
-• GNU General Public License (GPL)
-• Creative Commons licenses
-• other open-use frameworks
+- GNU General Public License (GPL)
+- Creative Commons licenses
+- other open-use frameworks
 
-However, ownership of original content always remains with the respective authors, publishers, or rights holders.`,
+However, the respective authors, publishers, or rights holders always hold the ownership of original content.`,
   },
   {
-    title: '2. Copyright Ownership',
-    body: `All trademarks, books, PDFs, images, and other materials belong to their respective owners.
-
+    title: '2. Ownership Copyright',
+    body: `Books, PDFs, images, brands trademarks and other items are the property of their respective owners.
 Ilmistree does not claim ownership of:
-• published textbooks
-• commercial books
-• third-party educational materials
+- published textbooks
+- commercial books
+- third-party educational materials
 
 If any such material appears on our platform, it is either:
-• for educational reference
-• publicly available
-• shared under assumed fair access conditions`,
+- for educational reference
+- publicly available
+- shared under assumed fair access conditions`,
   },
   {
     title: '3. Copyright Infringement Policy',
     body: `We take copyright concerns seriously.
 
 Copyright infringement may include:
-• copying full or partial content without permission
-• redistributing protected material
-• hosting copyrighted files without rights
+- copying full or partial content without permission
+- redistributing protected material
+- hosting copyrighted files without rights
 
 Even if content is:
-• free elsewhere
-• used for education
-• credited to the original author
+- free elsewhere
+- used for education
+- credited to the original author
 
 it may still be subject to copyright restrictions.`,
   },
   {
     title: '4. DMCA Compliance',
-    body: `Ilmistree complies with the principles of the Digital Millennium Copyright Act (DMCA) and similar international copyright laws.
-
-If you believe that your copyrighted work has been used improperly on our website, you may submit a formal complaint.`,
+    body: `The Digital Millennium Copyright Act (DMCA) and other corresponding international copyright rules are adhered to by Ilmistree.
+If you believe your copyrighted content has been violated on our website, you may submit a complaint.`,
   },
   {
     title: '5. How to Submit a DMCA Complaint',
-    body: `To process your request, please provide the following information:
+    body: `To make sure that your request is processed, please provide the following requirements:
 
-1. Your full name and contact details (email required)
-2. Proof that you are the copyright owner or authorized to act on behalf of the owner
-3. A clear description of the copyrighted work
-4. The exact URL(s) on our website where the material appears
-5. A statement confirming that:
-   • you have a good faith belief that the use is unauthorized
-   • the information provided is accurate
-6. Your signature (typed name is acceptable)`,
+1. Your personal name and contact info (email required).
+2. Proof that you are the owner of the copyright or the authority to act on behalf of them.
+3. A detailed description of the work secured by copyright.
+4. The reliable URL or URLs on our website where the material is located`,
   },
   {
     title: '6. Response to Complaints',
     body: `Once a valid complaint is received:
-• we review the request
-• take appropriate action (removal or restriction)
-• respond within a reasonable timeframe
+- we review the request
+- take appropriate action (removal or restriction)
+- respond within a reasonable timeframe
 
 Repeat violations may result in:
-• content removal
-• restricted access
-• account actions (if applicable)`,
+- content removal
+- restricted access
+- account actions (if applicable)`,
   },
   {
     title: '7. Fair Use Disclaimer',
     body: `Some content may be used under fair use principles for:
-• educational purposes
-• commentary
-• reference
+- educational purposes
+- commentary
+- reference
 
-However, fair use is limited and does not allow full redistribution of copyrighted works.`,
+Fair use, however, is limited and does not allow whole redistribution of works protected by copyright.`,
   },
   {
     title: '8. Public Domain & Open Content',
     body: `Content that is:
-• in the public domain
-• openly licensed
+- in the public domain
+- openly licensed
 
 may be used freely.
 
-Users are encouraged to verify licensing before reuse.`,
+Before reuse, users are advised to verify their licensing.`,
   },
   {
     title: '9. External Links',
     body: `Ilmistree may contain links to third-party resources.
-We are not responsible for the content hosted on external websites.`,
+The content which is stored on other websites cannot be our responsibility.`,
   },
   {
     title: '10. Contact for Copyright Issues',
@@ -118,10 +112,10 @@ Subject: DMCA Complaint`,
   {
     title: '11. Final Note',
     body: `This policy is intended to maintain a balance between:
-• respecting creators
-• supporting students
+- respecting creators
+- supporting students
 
-If any content unintentionally violates rights, we are committed to resolving the issue promptly.
+We are fully committed to quickly fixing any content that accidently violates someone's rights.
 
 For informational purposes only. This policy does not constitute legal advice.`,
   },

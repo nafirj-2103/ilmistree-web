@@ -198,20 +198,14 @@ export default function BookDetailPage({ params }: PageProps) {
       <div className="max-w-5xl mx-auto px-6 py-12">
         {/* Book Description Section */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">{book.title}</h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            {book.description}
-          </p>
-          {book.mainTopics && book.mainTopics.length > 0 && (
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Main Topics Covered:</h3>
-              <ul className="list-disc list-inside space-y-2">
-                {book.mainTopics.map((topic, idx) => (
-                  <li key={idx} className="text-gray-700">{topic}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {book.description.split('\n\n').map((paragraph, index) => (
+            <p
+              key={`${book.slug}-description-${index}`}
+              className="text-gray-700 leading-relaxed mb-4 last:mb-0"
+            >
+              {paragraph}
+            </p>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -266,6 +260,16 @@ export default function BookDetailPage({ params }: PageProps) {
                   <p className="text-gray-600 leading-relaxed">
                     {book.pctbCredit}
                   </p>
+                  {book.mainTopics && book.mainTopics.length > 0 && (
+                    <div className="mt-4">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Main Topics Covered:</h3>
+                      <ul className="list-disc list-inside space-y-2">
+                        {book.mainTopics.map((topic, idx) => (
+                          <li key={idx} className="text-gray-700">{topic}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -278,7 +282,7 @@ export default function BookDetailPage({ params }: PageProps) {
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-gray-900 mb-3">
-                    Educational Purpose
+                    For the purpose of education
                   </h2>
                   <p className="text-gray-600 leading-relaxed">
                     {book.educationalPurpose}
@@ -322,3 +326,4 @@ export default function BookDetailPage({ params }: PageProps) {
     </div>
   );
 }
+

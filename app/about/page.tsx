@@ -10,52 +10,53 @@ import { Footer } from "../../components/home/Footer";
 const sections = [
   {
     title: "About Us",
-    body: `Ilmistree is a digital educational platform developed to support students and teachers in their academic journey. Our primary objective is to make learning resources easily accessible for everyone. We aim to build a space where learners can find useful study materials and also contribute by sharing helpful content with others.
+    body: `Ilmistree is a digital platform that helps teachers and students learn. We want to make educational materials available to everyone. Our main aim is to help students share information and find useful study materials.Ilmistree simply helps people to learn by giving them a place to get e-books, notes and learning materials at any time and from anywhere.
 
-The idea behind Ilmistree is simple to promote education by providing a centralized platform where textbooks, notes, and learning resources are available in digital format for quick access anytime, anywhere.`,
+    Ilmistree wants to help students and teachers. They want to give students and teachers the things they need.Ilmistree is doing a lot of work to make sure students and teachers can get to these things easily. Ilmistree wants to make it simple for students and teachers to use these tools.`,
   },
   {
     title: "Disclaimer",
-    body: `Ilmistree is an independent educational platform and has no association with, or endorsement from, any government body or official institution. All materials available on this website are provided strictly for educational and informational purposes.
+    body: `Ilmistree is a website that provides information and it is not connected to any government or official institution. All the things you find on this website are here to help you learn and understand things.
 
-The resources shared here are collected from publicly available sources and are intended to assist students in their studies. We do not claim ownership of content that belongs to third parties such as authors, publishers, or institutions.`,
+The things we share on Ilmistree come from places where everyone can see them. We want to help students with their studies. We do not say that we own things that belong to people like authors or schools.`,
   },
   {
     title: "About Our Content",
-    body: `The sole purpose of Ilmistree is to encourage and support education. To achieve this, content has been gathered from various sources including public platforms, individuals, and educational communities.
+    body: `Ilmistree is here to help people learn. We get our content from places like public websites, people and groups that care about education.
 
-Most of the materials fall under Open Educational Resources (OER), which means they are freely accessible and allowed to be used or shared for learning purposes.
+Most of the things we have are Open Educational Resources. This means you can use them and share them with others to learn.
 
 Open Educational Resources include:
-• textbooks
-• notes and study materials
-• courses and modules
+- textbooks
+- notes and study materials
+- courses and modules
 
-These resources are designed to improve access to knowledge and support learners worldwide.`,
+These things are meant to help people over the world get access to knowledge and learn new things.`,
   },
   {
     title: "Copyright Notice",
-    body: `We always try our best to respect the rights of content creators and avoid any copyright issues. However, since some content may also be shared by users or external contributors, there is a possibility that certain material may unintentionally violate copyright policies.
+    body: `We try hard to respect the people who make the content and not use things that are copyrighted. Sometimes users or other people share things and we might not know if they are allowed to.
 
-If you are the rightful owner of any content and do not wish it to appear on our platform, please contact us. We will take immediate action and remove the content as soon as possible.
+If you made something and you do not want it on Ilmistree please tell us. We will take it down as soon as we can.
 
-We sincerely appreciate and acknowledge all content creators and copyright holders who allow educational sharing, whether directly or indirectly.`,
+We are very thankful to the people who make content and let us share it for education.`,
   },
   {
     title: "Responsibility Clause",
-    body: `Ilmistree does not take responsibility for content shared by third-party users. However, we are committed to resolving any valid concerns raised by content owners.
+    body: `Ilmistree is not responsible for the things that other users share. We will try to fix any problems that the people who made the content have.
 
-This platform does not represent or act on behalf of any official educational board, university, or institution whether government or private.
-All materials provided here are for educational support only and do not carry any official authority.`,
+This website does not speak for any school or institution. All the things on this website are just to help you learn and are not official.`,
   },
   {
     title: "Terms of Use",
-    body: `By using this website, you agree that Ilmistree and its team are not liable for how the provided materials are used.
-If you do not agree with these terms, you are advised not to use this platform.`,
+    body: `When you use this website you are agreeing that Ilmistree and the people who work on it are not responsible for how you use the things we provide.
+
+If you do not agree with this you should not use Ilmistree.`,
   },
   {
     title: "Contact Us",
-    body: `For any queries, concerns, or content-related requests, feel free to reach out to us.
+    body: `If you have any questions or concerns or need something you can contact us.
+
 Email: ilmistree@gmail.com`,
   },
 ];
@@ -113,8 +114,7 @@ export default function AboutPage() {
           </h1>
 
             <p className="text-white/80 text-base md:text-lg leading-relaxed max-w-xl text-center md:text-left">
-              Learn more about our mission, content sources, and commitment to providing
-              free and accessible educational resources for students.
+              Find out more about what we want to achieve, where we get our information from, and how we're committed to providing kids with free and easy to access educational tools.
             </p>
 
             <div className="w-16 h-1 bg-white/70 rounded-full" />

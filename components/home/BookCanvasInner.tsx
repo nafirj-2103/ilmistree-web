@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, createElement } from "react";
+import { useEffect, useRef, useState, createElement } from "react";
 import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
@@ -30,6 +30,12 @@ export function BookCanvasInner({
 }: BookCanvasInnerProps) {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isCoarsePointer, setIsCoarsePointer] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    setIsCoarsePointer(window.matchMedia('(pointer: coarse)').matches);
+  }, []);
 
   const canvasChildren = createElement(BookModel, {
     pointer,
@@ -47,11 +53,12 @@ export function BookCanvasInner({
           key: pathname,
           camera: { position: [1, 1, cameraZ] as [number, number, number], fov: 50 },
           flat: true,
-          gl: { 
-            antialias: true,
-            preserveDrawingBuffer: true
+          gl: {
+            antialias: !isCoarsePointer,
+            preserveDrawingBuffer: false,
+            powerPreference: 'high-performance',
           },
-          dpr: [1, 2],
+          dpr: isCoarsePointer ? 1 : [1, 1.5],
           style: { width: "100%", height: "100%" },
           onCreated: ({ scene }: { scene: THREE.Scene }) => {
             scene.background = new THREE.Color("#e0e0e0");
@@ -67,4 +74,3 @@ export function BookCanvasInner({
     </div>
   );
 }
-

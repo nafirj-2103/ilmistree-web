@@ -31,12 +31,14 @@ export function CourseCard({
   const [descExpanded, setDescExpanded] = useState(false);
   const [titleOverflow, setTitleOverflow] = useState(false);
   const [descOverflow, setDescOverflow] = useState(false);
+  const [isNearViewport, setIsNearViewport] = useState(false);
+  const previewRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const pointerThrottleRef = useRef<number>(0);
 
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!useModel || !modelInteractive) return;
+    if (!shouldRenderModel || !modelInteractive) return;
 
     const now = Date.now();
     if (now - pointerThrottleRef.current < 16) return;
@@ -49,7 +51,7 @@ export function CourseCard({
   };
 
   const handleLeave = () => {
-    if (useModel && modelInteractive) setPointer({ x: 0, y: 0 });
+    if (shouldRenderModel && modelInteractive) setPointer({ x: 0, y: 0 });
   };
 
   const handlePrimaryClick = () => {
@@ -89,6 +91,27 @@ export function CourseCard({
     return () => window.removeEventListener("resize", checkOverflow);
   }, [course.title, course.description]);
 
+  useEffect(() => {
+    const node = previewRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsNearViewport(entry.isIntersecting);
+      },
+      {
+        root: null,
+        rootMargin: '180px 0px',
+        threshold: 0.05,
+      }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  const shouldRenderModel = useModel && isNearViewport;
+
   return (
     <Card
       onMouseMove={handleMove}
@@ -98,8 +121,8 @@ export function CourseCard({
       onTouchEnd={onTouchEnd}
       className="overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 hover:scale-[1.02] group flex flex-col h-full"
     >
-      <div className="overflow-hidden relative h-40 sm:h-44 md:h-[220px]">
-        {useModel ? (
+      <div ref={previewRef} className="overflow-hidden relative h-40 sm:h-44 md:h-[220px]">
+        {shouldRenderModel ? (
           <BookCanvas
             pointer={pointer}
             cover={course.cover}

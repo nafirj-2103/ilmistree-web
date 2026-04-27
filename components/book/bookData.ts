@@ -196,19 +196,25 @@ export const bookDetails: Record<string, BookDetail> = {
     className: '9th Class',
     cover: '/models/textures/COMPUTER.jpg',
     intro:
-      'Get the 9th class Computer Science textbook in PDF format for easy reading and studying. This book introduces students to the fundamentals of computing, programming logic, hardware components, and software applications. It is an essential resource for anyone looking to build a strong base in information technology.',
+      'Download the Grade 9th computer science textbook in PDF format, so you can read and study it easily. This book teaches students the basics of computers, programming logic, hardware, and software. It is a must-have for anyone who wants to learn the basics of information technology.',
     description:
-      'Computer Science Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+      'You can quickly preview and download the Computer Textbook PDF for Class 9 online. This page has the most recent PCTB Computer Science book, which includes all of the chapters, ideas, and exercises in one place. Students can read the textbook online or download the whole PDF and study it later. This 9th grade computer book PDF makes it easy to get to, has clear content, and makes learning easy, whether you\'re studying for an exam or going over important topics.\n\nThe Punjab Curriculum and Textbook Board (PCTB) wrote this Computer Science book, which is part of the Grade 9th curriculum. It is written to help students learn about modern computers in both theory and practice. This digital copy is shared here so that students can study from any location.',
     mainTopics: [
-      'Computer Hardware & Components',
-      'Programming Fundamentals',
-      'Software Applications',
-      'Data Organization & Databases'
+      'Number Systems',
+       'Digital Systems and Logic Design',
+        'Software and System',
+         'Introducion to Computer Networks',
+          'Computational Thinking',
+           'Data Science and Data Gathering',
+            'Emerging Technologies in Computer Science',
+             'Ethical, Social, and Legal Concerns in Computer Usage',
+              'Enterpreneurship in Digital Age',
+      
     ],
     pctbCredit:
-      'Developed under the guidelines of the Punjab Curriculum and Textbook Board (PCTB), this Computer Science textbook is part of the official 9th class curriculum. It is written to give students a practical and theoretical understanding of modern computing. This digital version is shared here so students can study from anywhere.',
+      'This textbook is for Grade 9th Computer Science in 2026. This book is based on a new syllabus that is published by the Punjab Curriculum and Textbook Board (PCTB). There are new chapters and topics that are interconnected to what students need to learn right now. Students can easily read the soft copy online or download it using the links below.',
     educationalPurpose:
-      'This textbook is provided on our platform for the sole purpose of supporting education. We want students to have the tools they need to learn computer science concepts and prepare for their examinations effectively.',
+      'The only reason we have this book on our site is to help people learn. We want to give students the resources they need to learn about computers and do well on their tests.',
     copyrightRespect:
       'We have great respect for the intellectual property of all publishers and authors. This material is available here only as a free learning resource and is not being used for any commercial benefit whatsoever.',
     removalRequest:
