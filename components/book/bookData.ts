@@ -14,6 +14,15 @@ export interface BookDetail {
   acknowledgement: string;
   pdfUrl: string;
   previewUrl?: string;
+  quickAccess: {
+    subject: string;
+    className: string;
+    medium: string;
+    board: string;
+    format: string;
+    fileSize: string;
+    syllabus: string;
+  };
 }
 
 const DEFAULT_PDF =
@@ -28,17 +37,21 @@ export const bookDetails: Record<string, BookDetail> = {
     className: '9th Class',
     cover: '/models/textures/physics.jpg',
     intro:
-      'Students can now access the complete 9th class Physics textbook in a convenient digital PDF format. This resource is designed to help learners go through their chapters at their own pace, whether they are preparing for exams or simply revising key topics. Teachers can also benefit from this version while planning their lessons and classroom activities.',
+      'Students can now easily get the 9th-grade physics book in PDF format. This resource helps students go through their chapters at their pace whether they are getting ready for tests or going over key points. This version also helps teachers plan their lessons and materials in the classroom with the 9th-grade physics book.',
     description:
-      'Physics Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+      'This page makes it easy to see and download the Class 9 Physics Textbook PDF. It is the recent PCTB Physics book. It has all the chapters, ideas and exercises in one place. Students can read the 9th-grade physics book online or download the whole PDF to study without being online. When you are getting ready for exams or going over topics, the 9th class Physics book in PDF format is really helpful. It has explanations and you can find what you need quickly, which makes learning easier.\n\nThe Physics book is made by the Punjab Curriculum and Textbook Board. It is for students in this grade. The book is supposed to help you understand the basics of Physics and how they are used in life. We made a version of the book so students can study when they want and where they want. The 9th class Physics book is easy to use and you can take it with you anywhere.',
     mainTopics: [
       'Physical Quantities & Measurements',
-      'Kinematics & Dynamics',
+      'Kinematics',
+      'Dynamics',
+      'Turning Effects of Forces',
       'Work, Energy, and Power',
-      'Thermal Properties of Matter'
+      'Mechanical Properties of Matter',
+      'Thermal Properties of Matter',
+      'Magnetism',
     ],
     pctbCredit:
-      'This textbook has been officially developed and published under the supervision of the Punjab Curriculum and Textbook Board, commonly known as PCTB. It follows the approved national curriculum and is used in schools across Punjab. We are sharing this digital copy solely to make it easier for students to reach their study material without delay.',
+      'This Physics textbook has been carefully developed and published under the supervision of the Punjab Curriculum and Textbook Board (PCTB). It follows the officially approved national curriculum and is widely used in schools across Punjab. This digital version is shared to help students easily access their study material and continue learning without any delay.',
     educationalPurpose:
       'The content available on this page is shared entirely for learning and academic support. Our goal is to bridge the gap between students and their course material so that no learner has to struggle finding the books they need for their studies.',
     copyrightRespect:
@@ -47,7 +60,17 @@ export const bookDetails: Record<string, BookDetail> = {
       'If you hold the copyright to this textbook or any part of its content and would like it to be taken down from this platform, we encourage you to reach out to us directly. We take such requests seriously and will act promptly to remove the material upon verification.',
     acknowledgement:
       'We sincerely appreciate the efforts of the Punjab Curriculum and Textbook Board and all associated publishers who work hard to create quality educational content. Their contribution to the learning journey of millions of students is truly valued.',
-    pdfUrl: DEFAULT_PDF,
+    pdfUrl: 'https://drive.google.com/uc?export=download&id=1xYy8pSLJ_izsnvaI72PczXvpeMJ9rZnI',
+    previewUrl: 'https://drive.google.com/file/d/1xYy8pSLJ_izsnvaI72PczXvpeMJ9rZnI/preview',
+    quickAccess: {
+      subject: 'Physics',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: 'Current 2026',
+    },
   },
   '9th-class-turjuma-tul-quran': {
     slug: '9th-class-turjuma-tul-quran',
@@ -76,6 +99,15 @@ export const bookDetails: Record<string, BookDetail> = {
     acknowledgement:
       'We extend our gratitude to the PCTB and all scholars involved in preparing this translation textbook. Their dedication to making Quranic education a part of mainstream learning deserves deep respect and recognition.',
     pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Turjuma Tul Quran',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: 'Current 2026',
+    },
   },
   '9th-class-islamiat': {
     slug: '9th-class-islamiat',
@@ -104,6 +136,15 @@ export const bookDetails: Record<string, BookDetail> = {
     acknowledgement:
       'A heartfelt thank you to the curriculum developers and educators who created this resource. Their commitment to Islamic education helps shape the character and knowledge of students across the province.',
     pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Islamiat',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: 'Current 2026',
+    },
   },
   '9th-class-mathematics': {
     slug: '9th-class-mathematics',
@@ -132,6 +173,15 @@ export const bookDetails: Record<string, BookDetail> = {
     acknowledgement:
       'We are thankful to the mathematicians, educators, and the PCTB team who developed this textbook. Their hard work helps thousands of students build strong foundations in mathematics every year.',
     pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Mathematics',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: 'Current 2026',
+    },
   },
   '9th-class-urdu-qawaid-o-insha': {
     slug: '9th-class-urdu-qawaid-o-insha',
@@ -160,6 +210,15 @@ export const bookDetails: Record<string, BookDetail> = {
     acknowledgement:
       'We appreciate the linguists and curriculum experts at PCTB who crafted this textbook. Their efforts play an important role in preserving and promoting Urdu language skills among the younger generation.',
     pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Urdu Qawaid o Insha',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: 'Current 2026',
+    },
   },
   '9th-class-biology': {
     slug: '9th-class-biology',
@@ -188,6 +247,15 @@ export const bookDetails: Record<string, BookDetail> = {
     acknowledgement:
       'A special thanks to the scientists, authors, and the PCTB board members whose collaborative efforts bring quality biology education to classrooms across Punjab.',
     pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Biology',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: 'Current 2026',
+    },
   },
   '9th-class-computer-science': {
     slug: '9th-class-computer-science',
@@ -225,6 +293,15 @@ export const bookDetails: Record<string, BookDetail> = {
       'https://drive.google.com/uc?export=download&id=1YQNpbrn0gTJddb2mB7bAZJBiH8iqJ0cW',
     previewUrl:
       'https://drive.google.com/file/d/1YQNpbrn0gTJddb2mB7bAZJBiH8iqJ0cW/preview',
+    quickAccess: {
+      subject: 'Computer Science',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: 'Current 2026',
+    },
   },
   '9th-class-english-grammar': {
     slug: '9th-class-english-grammar',
@@ -253,6 +330,15 @@ export const bookDetails: Record<string, BookDetail> = {
     acknowledgement:
       'Our thanks go out to the English language experts and the PCTB publishing team who made this textbook possible. Their dedication to quality education helps students across Punjab develop strong communication skills.',
     pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'English Grammar',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: 'Current 2026',
+    },
   },
   '9th-class-urdu': {
     slug: '9th-class-urdu',
@@ -281,5 +367,14 @@ export const bookDetails: Record<string, BookDetail> = {
     acknowledgement:
       'We are truly grateful to the Urdu scholars, poets, and the PCTB team who put together this wonderful textbook. Their contribution keeps the rich tradition of Urdu literature alive among the new generation of learners.',
     pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Urdu',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: 'Current 2026',
+    },
   }
 };

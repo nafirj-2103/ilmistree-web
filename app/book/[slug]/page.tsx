@@ -64,36 +64,36 @@ export default function BookDetailPage({ params }: PageProps) {
   const quickAccessCard = (
     <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 space-y-4">
       <h3 className="text-lg font-bold text-gray-900">Quick Access</h3>
-      <div className="space-y-3 border border-gray-100 rounded-xl p-4 bg-gray-50">
-        <div className="flex justify-between">
-          <span className="text-gray-600">Subject:</span>
-          <span className="font-medium text-gray-900">{book.subject}</span>
+        <div className="space-y-3 border border-gray-100 rounded-xl p-4 bg-gray-50">
+          <div className="flex justify-between">
+            <span className="text-gray-600">Subject:</span>
+            <span className="font-medium text-gray-900">{book.quickAccess.subject}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-600">Class:</span>
+            <span className="font-medium text-gray-900">{book.quickAccess.className}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-600">Medium:</span>
+            <span className="font-medium text-gray-900">{book.quickAccess.medium}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-600">Board:</span>
+            <span className="font-medium text-gray-900">{book.quickAccess.board}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-600">Format:</span>
+            <span className="font-medium text-gray-900">{book.quickAccess.format}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-600">File Size:</span>
+            <span className="font-medium text-gray-900">{book.quickAccess.fileSize}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-gray-600">Syllabus:</span>
+            <span className="font-medium text-gray-900">{book.quickAccess.syllabus}</span>
+          </div>
         </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Class:</span>
-          <span className="font-medium text-gray-900">{book.className}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Medium:</span>
-          <span className="font-medium text-gray-900">English Medium</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Board:</span>
-          <span className="font-medium text-gray-900">Punjab Board</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Format:</span>
-          <span className="font-medium text-gray-900">PDF</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">File Size:</span>
-          <span className="font-medium text-gray-900">54.6 MB</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-gray-600">Syllabus:</span>
-          <span className="font-medium text-gray-900">Current 2026</span>
-        </div>
-      </div>
       <div className="space-y-3">
         <Button
           className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white py-2.5 rounded-lg font-semibold flex items-center justify-center gap-2"

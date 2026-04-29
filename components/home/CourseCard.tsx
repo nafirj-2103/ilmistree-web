@@ -1,20 +1,12 @@
 'use client'
 
 import React, { useEffect, useRef, useState } from 'react';
-import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ArrowRight, Clock, Star, Download } from 'lucide-react';
 import { Course, CourseCardProps } from './types';
-
-const BookCanvas = dynamic(
-  () => import('./BookCanvas').then((mod) => mod.BookCanvas),
-  {
-    ssr: false,
-    loading: () => null,
-  }
-);
+import { BookCanvas } from './BookCanvas';
 
 export function CourseCard({
   course,
@@ -31,7 +23,7 @@ export function CourseCard({
   const [descExpanded, setDescExpanded] = useState(false);
   const [titleOverflow, setTitleOverflow] = useState(false);
   const [descOverflow, setDescOverflow] = useState(false);
-  const [isNearViewport, setIsNearViewport] = useState(false);
+  const [hasEnteredViewport, setHasEnteredViewport] = useState(false);
   const previewRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
@@ -92,16 +84,24 @@ export function CourseCard({
   }, [course.title, course.description]);
 
   useEffect(() => {
+    const image = new Image();
+    image.src = course.cover;
+  }, [course.cover]);
+
+  useEffect(() => {
     const node = previewRef.current;
     if (!node) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsNearViewport(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setHasEnteredViewport(true);
+          observer.disconnect();
+        }
       },
       {
         root: null,
-        rootMargin: '180px 0px',
+        rootMargin: '420px 0px',
         threshold: 0.05,
       }
     );
@@ -110,7 +110,7 @@ export function CourseCard({
     return () => observer.disconnect();
   }, []);
 
-  const shouldRenderModel = useModel && isNearViewport;
+  const shouldRenderModel = useModel && hasEnteredViewport;
 
   return (
     <Card
