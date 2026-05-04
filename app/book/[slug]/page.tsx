@@ -260,16 +260,33 @@ export default function BookDetailPage({ params }: PageProps) {
                   <p className="text-gray-600 leading-relaxed">
                     {book.pctbCredit}
                   </p>
-                  {book.mainTopics && book.mainTopics.length > 0 && (
-                    <div className="mt-4">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">Main Topics Covered:</h3>
-                      <ul className="list-disc list-inside space-y-2">
-                        {book.mainTopics.map((topic, idx) => (
-                          <li key={idx} className="text-gray-700">{topic}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                    {book.mainTopics && book.mainTopics.length > 0 && (
+                      <div className="mt-4">
+                        <h3 className="text-lg font-semibold text-gray-900 mb-3">Main Topics Covered:</h3>
+                        {book.slug === '9th-class-turjuma-tul-quran' ? (
+                          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8">
+                            {[0, Math.ceil(book.mainTopics.length / 2)].map((startIndex) => (
+                              <ol key={startIndex} className="space-y-2">
+                                {book.mainTopics
+                                  .slice(startIndex, startIndex + Math.ceil(book.mainTopics.length / 2))
+                                  .map((topic, idx) => (
+                                    <li key={topic} className="grid grid-cols-[2rem_1fr] items-start gap-2 text-gray-700">
+                                      <span className="text-left">{startIndex + idx + 1}.</span>
+                                      <span className="text-right">{topic}</span>
+                                    </li>
+                                  ))}
+                              </ol>
+                            ))}
+                          </div>
+                        ) : (
+                          <ul className="list-disc list-inside space-y-2">
+                            {book.mainTopics.map((topic, idx) => (
+                              <li key={idx} className="text-gray-700">{topic}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    )}
                 </div>
               </div>
             </div>

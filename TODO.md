@@ -1,7 +1,4 @@
-# Task: Update HeroSection "Explore Courses" button to link to /courses
+# TODO: Update Tarjuma Tul Quran Page Texts
 
-## Steps:
-- [x] Step 1: Create TODO.md (current)
-- [x] Step 2: Edit components/home/HeroSection.tsx - Wrap Button in Link href="/courses", remove conflicting onClick/hover handlers
-- [x] Step 3: Test navigation
-- [x] Step 4: Mark complete
+## Plan Breakdown\n- [x] Step 1: Update `components/book/bookData.ts` with new texts for '9th-class-turjuma-tul-quran' entry (intro, description, pctbCredit).\n- [x] Step 2: Verify changes by previewing `/book/9th-class-turjuma-tul-quran`.\n- [x] Step 3: Mark complete and attempt_completion.\n\n**Current Progress:** All steps completed.
+

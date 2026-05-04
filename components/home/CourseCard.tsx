@@ -202,9 +202,10 @@ export function CourseCard({
           onClick={handlePrimaryClick}
           className="w-full bg-[#D32F2F] hover:bg-[#8B1A1A] text-white rounded-full font-semibold transition-all flex items-center justify-center gap-2 group-hover:scale-105 text-xs sm:text-sm py-2.5 md:py-3 leading-tight px-6"
         >
-          View & Download
+          Open
           <ArrowRight className="w-4 h-4" />
         </Button>
+
       </div>
     </Card>
   );
