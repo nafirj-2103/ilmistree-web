@@ -83,6 +83,9 @@ export const bookDetails: Record<string, BookDetail> = {
 
 Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content, and important concepts in a systematic manner. The digital book has been developed to facilitate the learning of Quranic meanings in an easy and lucid manner, whether you are revising important lessons or preparing for exams, so that the method of studying becomes more smooth and effective.`,
     mainTopics: [
+      'تلاوتِ قرآن کے آداب',
+      'عمومی ہدایات برائے اساتذۂ کرام',
+      'حاصلاتِ تعلیم',
       'سورۃ مریم',
       'سورۃ طٰہٰ',
       'سورۃ الانبیاء',
@@ -100,7 +103,10 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       'سورۃ یٰس',
       'سورۃ الصافات',
       'سورۃ ص',
-      'سورۃ الاحقاف'
+      'سورۃ الاحقاف',
+      'ماڈل پیپر برائے جماعت نہم',
+      'رموز و اوقافِ قرآنِ مجید',
+      'تصدیقی سرٹیفکیٹ',
     ],
     pctbCredit: `This text book has been prepared under the supervision of Punjab Curriculum and Textbook Board (PCTB) and is according to the approved curriculum. It is used extensively in schools throughout Punjab to help students develop a clear understanding of the teachings of the Quran. This digital copy is provided so that students can readily access their study material and continue learning.`,
     educationalPurpose:
