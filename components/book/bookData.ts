@@ -137,17 +137,20 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
     className: '9th Class',
     cover: '/models/textures/islamiat.jpg',
     intro:
-      'Access the official 9th class Islamiat textbook in PDF format right here. This digital version covers all the chapters included in the Punjab board syllabus, from the basics of Islamic teachings to detailed discussions on moral values and historical events. Students can use this book for daily study and exam preparation alike.',
+      'Grab the official 9th class Islamiat textbook in PDF format here. This digital edition contains all the chapters that are in the syllabus of Punjab board starting with the basics of Islamic teachings to deep discussions on moral values and historical events. The book can be read by students for daily study as well as for the preparation of exams.',
     description:
-      'Islamiat Class 9th Updated Textbook 2025. This book is based on the latest syllabus issued by the Punjab Curriculum and Textbook Board (PCTB). It includes updated topics and chapters according to the current academic requirements. Students can easily read the soft copy online or download it using the links provided below.',
+      'Looking for Class 9 Islamiyat Textbook PDF? This page is an easy way to read and download the latest PCTB Islamiyat book in one place. Keeping and maintaining physical books can be cumbersome for students and teachers alike, particularly during daily study and revision.So this digital version is a simple and quick way for you ,to read the book online or download the full PDF eBook copies of this book for no cost.\n\nAll the chapters for 9th Class Islamiyat book are included with key concepts and important topics in well organised format. This digital version is built to help students to understand Islamic teachings in a clear and effective method. Whether you are preparing for exams or revising important lessons, this PDF makes learning easier, faster and accessible.',
     mainTopics: [
-      'Islamic Principles & Beliefs',
-      'Pillars of Islam',
-      'Islamic History & Civilization',
-      'Moral Character & Ethics'
+      'Quran e Majeed o Hadees e Nabvi (S.A.W)',
+      'Imaniyat o Ibadaat',
+      'Seerat e Nabwi (S.A.W)',
+      'Akhlaq o Adaab',
+      'Husn e Mamlaat o Masharat',
+      'Hidayat k Sarchashme aur Mashaheer e Islam',
+      'Islami Taleemat aur Asr e Hazir K Taqaze',
     ],
     pctbCredit:
-      'The Islamiat textbook for 9th class is published by the Punjab Curriculum and Textbook Board (PCTB) as a core subject resource. It is designed to educate students about Islamic principles, ethics, and history in a structured manner. This digital version is being shared to help students access their course material with ease.',
+      'This textbook has been prepared under the supervision of Punjab Curriculum and Textbook Board (PCTB) in respect of approved curriculum. It is extensively used in schools of Punjab to help students gain a clear understanding of Islamic teachings. This is a digital copy to ensure that students have easy access to their study material and can continue their learning without any difficulty.',
     educationalPurpose:
       'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
     copyrightRespect:
@@ -156,15 +159,16 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       'If you are the copyright owner or authorized representative and believe this content should not be displayed here, please contact us through our website. We promise to handle your concern respectfully and remove the material as quickly as possible.',
     acknowledgement:
       'A heartfelt thank you to the curriculum developers and educators who created this resource. Their commitment to Islamic education helps shape the character and knowledge of students across the province.',
-    pdfUrl: DEFAULT_PDF,
+    pdfUrl: 'https://drive.google.com/uc?export=download&id=1kiaCqhXsXuuZ7HAAuXYfjl4_WaBf-ARS',
+    previewUrl: 'https://drive.google.com/file/d/1kiaCqhXsXuuZ7HAAuXYfjl4_WaBf-ARS/preview',
     quickAccess: {
       subject: 'Islamiat',
       className: '9th Class',
-      medium: 'English Medium',
+      medium: 'Urdu Medium',
       board: 'Punjab Board',
       format: 'PDF',
-      fileSize: '54.6 MB',
-      syllabus: '2025-2026',
+      fileSize: '23.9 MB',
+      syllabus: '2022-2026',
     },
   },
   // Add all other books from the original file here to complete it
