@@ -53,7 +53,7 @@ export const bookDetails: Record<string, BookDetail> = {
     pctbCredit:
       'This Physics textbook has been carefully developed and published under the supervision of the Punjab Curriculum and Textbook Board (PCTB). It follows the officially approved national curriculum and is widely used in schools across Punjab. This digital version is shared to help students easily access their study material and continue learning without any delay.',
     educationalPurpose:
-      'The content available on this page is shared entirely for learning and academic support. Our goal is to bridge the gap between students and their course material so that no learner has to struggle finding the books they need for their studies.',
+      'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
     copyrightRespect:
       'Ilmistree fully respects the intellectual property rights of all publishers and content creators. This material is shared here only with the intention of supporting education and is not being used for any commercial activity or unauthorized distribution.',
     removalRequest:
@@ -110,7 +110,7 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
     ],
     pctbCredit: `This text book has been prepared under the supervision of Punjab Curriculum and Textbook Board (PCTB) and is according to the approved curriculum. It is used extensively in schools throughout Punjab to help students develop a clear understanding of the teachings of the Quran. This digital copy is provided so that students can readily access their study material and continue learning.`,
     educationalPurpose:
-      'This resource is provided purely for educational and spiritual learning purposes. Our intention is to support students in understanding Quranic teachings as part of their academic journey and personal growth.',
+      'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
     copyrightRespect:
       'We acknowledge and respect the rights of the original publishers. This content is not being distributed for profit or any unauthorized use. It is presented solely as a learning aid for students enrolled in the Punjab education system.',
     removalRequest:
@@ -171,7 +171,213 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       syllabus: '2022-2026',
     },
   },
-  // Add all other books from the original file here to complete it
-  // (Omitted for brevity in this response, but include all from physics to urdu in actual use)
+  '9th-class-mathematics': {
+    slug: '9th-class-mathematics',
+    title: '9th Class Mathematics Text Book PDF',
+    subject: 'Mathematics',
+    className: '9th Class',
+    cover: '/models/textures/MATH.jpg',
+    intro:
+      'The 9th Class Mathematics textbook is available in PDF format for easy study, rapid revision, and efficient classroom support. Students can review major ideas at any time without carrying physical books thanks to this digital version, that can be downloaded, or read online for convenient learning at home or on the go.',
+    description:
+      'Looking for the Class 9 Mathematics Textbook PDF? This page provides a simple and reliable way to read and download the latest PCTB Math book in one place. Managing physical books can be difficult for students, especially during daily practice and revision. That’s why this digital edition is a good solution you can either read the book online, or download the complete PDF to get quick access at any time of day anywhere without any fuss.\n\n9th Class Maths book covers all chapters with exercises and key concepts in a well formatted manner. This digital version has been developed for helping students in comprehension of mathematical concepts clearly and in upgrading problem solving skills. This PDF can make the learning process more efficient, structured, and accessible, whether you are preparing for exams or practicing important exercises.',
+    mainTopics: ['Sets', 
+      'Real Numbers',	
+      'Logarithms',	
+      'Set and Functions',	
+      'Factorization and Algebraic Manipulation',	
+      'Linear Equations and Inequalities',	
+      'Trigonometry',	
+      'Coordinate Geometry',
+      'Logic',	
+      'Similar Figures',	
+      'Graphs of Functions',	
+      'Loci and Construction',	
+      'Information Handling',	 
+      'Probability',
+      'Answers and Glossary',
+       ],
+    pctbCredit:
+      'This textbook is prepared under the supervision of Punjab Curriculum & Textbook Board (PCTB) according to the approved curriculum. It is widely used in schools in Punjab to help students build a strong foundation in Mathematics. This digital copy is provided to ensure that students are able to access their study material conveniently and continue their learning process without any hindrance.',
+    educationalPurpose:
+      'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
+    copyrightRespect:
+      'We respect the rights of the original publishers and share this content only for educational assistance.',
+    removalRequest:
+      'If you are the rights holder and want this material removed, please contact us and we will respond promptly.',
+    acknowledgement:
+      'We appreciate the efforts of the curriculum developers and educators behind this textbook.',
+    pdfUrl: 'https://drive.google.com/uc?export=download&id=1IHxM96F221JY3uL4jEIRWQ8NxskXyilF',
+    previewUrl: 'https://drive.google.com/file/d/1IHxM96F221JY3uL4jEIRWQ8NxskXyilF/preview',
+    quickAccess: {
+      subject: 'Mathematics',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '109 MB',
+      syllabus: '2025-2026',
+    },
+  },
+  '9th-class-urdu-qawaid-o-insha': {
+    slug: '9th-class-urdu-qawaid-o-insha',
+    title: '9th Class Urdu Qawaid-o-Insha Text Book PDF',
+    subject: 'Urdu Qawaid-o-Insha',
+    className: '9th Class',
+    cover: '/models/textures/INSHA.jpg',
+    intro:
+      'Get the 9th class Urdu Qawaid-o-Insha textbook in PDF format for grammar practice and writing improvement.',
+    description:
+      'This page offers the Class 9 Urdu Qawaid-o-Insha textbook in digital PDF form. Students can read it online or download it for grammar study, sentence structure, and writing practice.\n\nThe digital version helps students access their course content more easily.',
+    mainTopics: ['قواعد', 'انشاء', 'جملے', 'تحریری مشق'],
+    pctbCredit:
+      'This Urdu Qawaid-o-Insha textbook follows the Punjab Curriculum and Textbook Board (PCTB) approved syllabus.',
+    educationalPurpose:
+      'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
+    copyrightRespect:
+      'We fully respect the rights of the original publishers and share this material only for educational use.',
+    removalRequest:
+      'If you own this content and want it removed, please contact us for prompt action.',
+    acknowledgement:
+      'We acknowledge the contribution of the authors, educators, and curriculum board.',
+    pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Urdu Qawaid-o-Insha',
+      className: '9th Class',
+      medium: 'Urdu Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: '2025-2026',
+    },
+  },
+  '9th-class-biology': {
+    slug: '9th-class-biology',
+    title: '9th Class Biology Text Book PDF',
+    subject: 'Biology',
+    className: '9th Class',
+    cover: '/models/textures/BIOLOGY.jpg',
+    intro:
+      'Open the 9th class Biology textbook in PDF format for chapter study, revision, and concept building.',
+    description:
+      'This page gives students easy access to the Class 9 Biology textbook in PDF form. It supports daily study, chapter reading, and preparation for exams.\n\nStudents and teachers can use this digital version for flexible and convenient learning.',
+    mainTopics: ['Introduction to Biology', 'Cell Biology', 'Biodiversity', 'Life Processes'],
+    pctbCredit:
+      'This Biology textbook is prepared according to the Punjab Curriculum and Textbook Board (PCTB) curriculum.',
+    educationalPurpose:
+      'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
+    copyrightRespect:
+      'We respect the intellectual property rights of all publishers and authors.',
+    removalRequest:
+      'If removal is requested by the copyright owner, we will act quickly after verification.',
+    acknowledgement:
+      'We sincerely value the efforts of the textbook authors and curriculum developers.',
+    pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Biology',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: '2025-2026',
+    },
+  },
+  '9th-class-computer-science': {
+    slug: '9th-class-computer-science',
+    title: '9th Class Computer Science Text Book PDF',
+    subject: 'Computer Science',
+    className: '9th Class',
+    cover: '/models/textures/COMPUTER.jpg',
+    intro:
+      'Read and download the 9th class Computer Science textbook in PDF format for easier digital learning.',
+    description:
+      'This page provides the Class 9 Computer Science textbook in PDF form. Students can use it to study core concepts, revise lessons, and prepare for tests.\n\nThe digital copy makes course material available anytime and anywhere.',
+    mainTopics: ['Computer Systems', 'Problem Solving', 'Programming Basics', 'Information Technology'],
+    pctbCredit:
+      'This Computer Science textbook follows the official Punjab Curriculum and Textbook Board (PCTB) syllabus.',
+    educationalPurpose:
+      'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
+    copyrightRespect:
+      'We respect the rights of publishers and share this content only for non-commercial educational use.',
+    removalRequest:
+      'Copyright holders may contact us to request removal, and we will respond promptly.',
+    acknowledgement:
+      'We appreciate the educators and authors who developed this educational resource.',
+    pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Computer Science',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: '2025-2026',
+    },
+  },
+  '9th-class-english-grammar': {
+    slug: '9th-class-english-grammar',
+    title: '9th Class English Grammar Text Book PDF',
+    subject: 'English Grammar',
+    className: '9th Class',
+    cover: '/models/textures/ENG GRAMER.jpg',
+    intro:
+      'Use the 9th class English Grammar textbook PDF to improve grammar, comprehension, and writing skills.',
+    description:
+      'This page offers the Class 9 English Grammar textbook in digital PDF format. Students can read it online or download it for practice and revision.\n\nIt is a convenient way to keep English study material available at all times.',
+    mainTopics: ['Parts of Speech', 'Tenses', 'Sentence Structure', 'Comprehension'],
+    pctbCredit:
+      'This English Grammar resource follows the approved Punjab Curriculum and Textbook Board (PCTB) pattern.',
+    educationalPurpose:
+      'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
+    copyrightRespect:
+      'We respect all content rights and provide this material only for educational assistance.',
+    removalRequest:
+      'Rights holders can contact us for removal and we will handle the request responsibly.',
+    acknowledgement:
+      'We thank the authors and educators involved in preparing this learning resource.',
+    pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'English Grammar',
+      className: '9th Class',
+      medium: 'English Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: '2025-2026',
+    },
+  },
+  '9th-class-urdu': {
+    slug: '9th-class-urdu',
+    title: '9th Class Urdu Text Book PDF',
+    subject: 'Urdu',
+    className: '9th Class',
+    cover: '/models/textures/URDU.jpg',
+    intro:
+      'Open and study the 9th class Urdu textbook in PDF format for poetry, prose, and language learning.',
+    description:
+      'This page makes the Class 9 Urdu textbook available in digital PDF form. Students can use it for lesson study, revision, and regular reading.\n\nThis soft copy makes Urdu study more accessible and easy to manage.',
+    mainTopics: ['نظم', 'نثر', 'غزل', 'فہم و ادراک'],
+    pctbCredit:
+      'This Urdu textbook is prepared in line with the Punjab Curriculum and Textbook Board (PCTB) syllabus.',
+    educationalPurpose:
+      'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
+    copyrightRespect:
+      'We respect the rights of publishers and content creators and do not use this material commercially.',
+    removalRequest:
+      'If the rightful owner requests removal, we will review and remove the content quickly.',
+    acknowledgement:
+      'We appreciate the work of the educators and authors who created this textbook.',
+    pdfUrl: DEFAULT_PDF,
+    quickAccess: {
+      subject: 'Urdu',
+      className: '9th Class',
+      medium: 'Urdu Medium',
+      board: 'Punjab Board',
+      format: 'PDF',
+      fileSize: '54.6 MB',
+      syllabus: '2025-2026',
+    },
+  },
 };
 
