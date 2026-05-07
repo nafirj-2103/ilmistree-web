@@ -50,13 +50,13 @@ export const class9Courses: Course[] = [
   {
     id: 5,
     category: 'New Syllabus',
-    title: '9 Urdu Qawaid-o-Insha T.Book PDF',
+    title: '9 Urdu Qawaid-e-Insha T.Book PDF',
     description: 'Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly',
     cover: '/models/textures/INSHA.jpg',
     duration: '15 March 2026',
     rating: 4.4,
     downloads: '3K',
-    slug: '9th-class-urdu-qawaid-o-insha',
+    slug: '9th-class-urdu-qawaid-e-insha',
   },
   {
     id: 6,

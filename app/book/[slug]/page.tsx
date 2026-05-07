@@ -275,7 +275,21 @@ export default function BookDetailPage({ params }: PageProps) {
                                       <span className="text-right">{topic}</span>
                                     </li>
                                   ))}
-                              </ol>
+                                </ol>
+                              ))}
+                            </div>
+                        ) : book.slug === '9th-class-urdu-qawaid-e-insha' ? (
+                          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-8">
+                            {[0, Math.ceil(book.mainTopics.length / 2)].map((startIndex) => (
+                              <ul key={startIndex} className="space-y-2">
+                                {book.mainTopics
+                                  .slice(startIndex, startIndex + Math.ceil(book.mainTopics.length / 2))
+                                  .map((topic) => (
+                                    <li key={topic} className="text-gray-700">
+                                      {topic}
+                                    </li>
+                                  ))}
+                              </ul>
                             ))}
                           </div>
                         ) : (

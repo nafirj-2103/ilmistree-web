@@ -1,7 +1,12 @@
 'use client'
 
 import React, { Component, useMemo, useRef, useState } from "react";
-import { BookCanvasInner } from "./BookCanvasInner";
+import dynamic from "next/dynamic";
+
+const BookCanvasInner = dynamic(
+  () => import("./BookCanvasInner").then((mod) => mod.BookCanvasInner),
+  { ssr: false }
+);
 
 export type BookCanvasProps = {
   pointer: { x: number; y: number };
