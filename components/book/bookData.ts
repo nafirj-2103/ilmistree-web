@@ -181,22 +181,23 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       'The 9th Class Mathematics textbook is available in PDF format for easy study, rapid revision, and efficient classroom support. Students can review major ideas at any time without carrying physical books thanks to this digital version, that can be downloaded, or read online for convenient learning at home or on the go.',
     description:
       'Looking for the Class 9 Mathematics Textbook PDF? This page provides a simple and reliable way to read and download the latest PCTB Math book in one place. Managing physical books can be difficult for students, especially during daily practice and revision. That’s why this digital edition is a good solution you can either read the book online, or download the complete PDF to get quick access at any time of day anywhere without any fuss.\n\n9th Class Maths book covers all chapters with exercises and key concepts in a well formatted manner. This digital version has been developed for helping students in comprehension of mathematical concepts clearly and in upgrading problem solving skills. This PDF can make the learning process more efficient, structured, and accessible, whether you are preparing for exams or practicing important exercises.',
-    mainTopics: ['Sets', 
-      'Real Numbers',	
-      'Logarithms',	
-      'Set and Functions',	
-      'Factorization and Algebraic Manipulation',	
-      'Linear Equations and Inequalities',	
-      'Trigonometry',	
+    mainTopics: [
+      'Sets',
+      'Real Numbers',
+      'Logarithms',
+      'Set and Functions',
+      'Factorization and Algebraic Manipulation',
+      'Linear Equations and Inequalities',
+      'Trigonometry',
       'Coordinate Geometry',
-      'Logic',	
-      'Similar Figures',	
-      'Graphs of Functions',	
-      'Loci and Construction',	
-      'Information Handling',	 
+      'Logic',
+      'Similar Figures',
+      'Graphs of Functions',
+      'Loci and Construction',
+      'Information Handling',
       'Probability',
       'Answers and Glossary',
-       ],
+    ],
     pctbCredit:
       'This textbook is prepared under the supervision of Punjab Curriculum & Textbook Board (PCTB) according to the approved curriculum. It is widely used in schools in Punjab to help students build a strong foundation in Mathematics. This digital copy is provided to ensure that students are able to access their study material conveniently and continue their learning process without any hindrance.',
     educationalPurpose:
@@ -286,8 +287,10 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       'If you own this content and want it removed, please contact us for prompt action.',
     acknowledgement:
       'We acknowledge the contribution of the authors, educators, and curriculum board.',
-    pdfUrl: 'https://drive.usercontent.google.com/u/0/uc?id=18jrYqapYhunZykdWTX4Yl5js8RtCk2Bq&export=download&authuser=0',
-    previewUrl: 'https://drive.usercontent.google.com/u/0/uc?id=18jrYqapYhunZykdWTX4Yl5js8RtCk2Bq&export=download&authuser=0',
+    pdfUrl:
+      'https://drive.usercontent.google.com/u/0/uc?id=18jrYqapYhunZykdWTX4Yl5js8RtCk2Bq&export=download&authuser=0',
+    previewUrl:
+      'https://drive.usercontent.google.com/u/0/uc?id=18jrYqapYhunZykdWTX4Yl5js8RtCk2Bq&export=download&authuser=0',
     quickAccess: {
       subject: 'Urdu Qawaid-e-Insha',
       className: '9-10 Class',
@@ -305,12 +308,12 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
     className: '9th Class',
     cover: '/models/textures/BIOLOGY.jpg',
     intro:
-      'Open the 9th class Biology textbook in PDF format for chapter study, revision, and concept building.',
+      'Download Class 9 Biology Textbook PDF to learn and understand important concepts of Biology in a simple way. This digital edition makes it easy for students by finding out topics related to living things, human body systems, plants, animals, and the scientific process. The book is available online or the full PDF is downloadable for easy access at any time.',
     description:
-      'This page gives students easy access to the Class 9 Biology textbook in PDF form. It supports daily study, chapter reading, and preparation for exams.\n\nStudents and teachers can use this digital version for flexible and convenient learning.',
-    mainTopics: ['Introduction to Biology', 'Cell Biology', 'Biodiversity', 'Life Processes'],
+      'This Biology book has been specially created to strengthen the conceptual knowledge of 9th grade students and that would boost their knowledge of science through detailed explanations, diagrams and exercises. The PDF version makes studying more flexible and accessible so students may learn without having to carrying around heavy physical textbooks. All chapters are ordered fully for more efficient revision, practice and exam preparation.\n\nFor everyday study, rapid revision, and board exam and assessment preparation, this digital textbook is very helpful. At home or elsewhere, students can more readily examine key biology topics and comprehend scientific ideas. This PDF resource offers an easy and dependable approach to continue learning at any time, whether you\'re reviewing important chapters or getting ready for exams.',
+    mainTopics: ['The Science Of Biology', 'BIODIVERSITY', 'The Cell', 'Cell Cycle','Tissues,Organs and Organ Systems','Enzymes','Bioenergetics','Plant physiology','Reproduction in Plants','Glossary'],
     pctbCredit:
-      'This Biology textbook is prepared according to the Punjab Curriculum and Textbook Board (PCTB) curriculum.',
+      'This textbook has been written under the supervision of Punjab Curriculum & Textbook Board (PCTB) on the officially approved syllabus. It has been widely adopted by schools in Punjab to help students build their Urdu language skills, including grammar, comprehension and writing proficiency, in a structured and effective way.\n\nThe digital edition is offered to make learning more convenient and accessible for the students. This gives students easy access to their study materials over the internet, enabling them to keep pace with their academic preparation, revision, and practice without the limitations of carrying printed books around.',
     educationalPurpose:
       'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
     copyrightRespect:
@@ -319,14 +322,15 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       'If removal is requested by the copyright owner, we will act quickly after verification.',
     acknowledgement:
       'We sincerely value the efforts of the textbook authors and curriculum developers.',
-    pdfUrl: DEFAULT_PDF,
+       pdfUrl:'https://drive.google.com/uc?export=download&id=1I9F9tqWqaGBndZSR3DzyaBtsG1ImpU5l',
+       previewUrl:'https://drive.google.com/file/d/1I9F9tqWqaGBndZSR3DzyaBtsG1ImpU5l/preview',
     quickAccess: {
       subject: 'Biology',
       className: '9th Class',
       medium: 'English Medium',
       board: 'Punjab Board',
       format: 'PDF',
-      fileSize: '54.6 MB',
+      fileSize: '30 MB',
       syllabus: '2025-2026',
     },
   },
@@ -340,7 +344,12 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       'Read and download the 9th class Computer Science textbook in PDF format for easier digital learning.',
     description:
       'This page provides the Class 9 Computer Science textbook in PDF form. Students can use it to study core concepts, revise lessons, and prepare for tests.\n\nThe digital copy makes course material available anytime and anywhere.',
-    mainTopics: ['Computer Systems', 'Problem Solving', 'Programming Basics', 'Information Technology'],
+    mainTopics: [
+      'Computer Systems',
+      'Problem Solving',
+      'Programming Basics',
+      'Information Technology',
+    ],
     pctbCredit:
       'This Computer Science textbook follows the official Punjab Curriculum and Textbook Board (PCTB) syllabus.',
     educationalPurpose:
@@ -427,3 +436,4 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
     },
   },
 };
+
