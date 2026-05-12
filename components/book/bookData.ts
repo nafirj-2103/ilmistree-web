@@ -341,17 +341,24 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
     className: '9th Class',
     cover: '/models/textures/COMPUTER.jpg',
     intro:
-      'Read and download the 9th class Computer Science textbook in PDF format for easier digital learning.',
+      'Download 9th Class Computer Science Textbook in PDF format for Digital Learning Easy to learn and understand.Read and Download Class 9 Computer Science Textbook in PDF for Smarter and Convenient Digital Learning Experience. This textbook introduces major ideas of computer science including basic programming, computer systems, problem solving and fundamentals in technological in a clear and student friendly format. Students can easily study the book online or download the complete PDF for quick access anytime. It results in the daily learning, revision and exam preparation more flexible and efficient without completely relying on physical textbooks.',
     description:
-      'This page provides the Class 9 Computer Science textbook in PDF form. Students can use it to study core concepts, revise lessons, and prepare for tests.\n\nThe digital copy makes course material available anytime and anywhere.',
+      'This Computer Science book for Class 9 is designed to assist students in having a strong knowledge of computer basics, programming concepts, and real-time technology implementations with simple explanations and practical examples.The digital PDF version makes studying more convenient and flexible.Students can access the course material anytime without the trouble of carrying printed books. Each chapter is well organized to facilitate better learning, revision and preparation for assignments and examinations.\n\nThis digital book of Computer Science is very useful for regular study, revision of concepts, and preparation for exams throughout the academic year. Students can more conveniently have a quick review of important topics like computer systems, algorithms, programming basics, and information technology.',
     mainTopics: [
-      'Computer Systems',
-      'Problem Solving',
-      'Programming Basics',
-      'Information Technology',
+      'Introduction to Systems',
+      'Number Systems', 
+      'Digital Systems and Logic Design',
+      'Software System',
+      'Introduction to Computer Networks',
+      'Computational Thinking',
+      'Data Science and Data Gathering',
+      'Emerging Technologies in Computer Science',
+      'Ethical, Social, and Legal Concerns in Computer Usage',
+      'Entrepreneurship in Digital Age',
+      'Answers',
     ],
     pctbCredit:
-      'This Computer Science textbook follows the official Punjab Curriculum and Textbook Board (PCTB) syllabus.',
+      'This Computer Science book for Class 9 is designed to assist students in having a strong knowledge of computer basics, programming concepts, and real-time technology implementations with simple explanations and practical examples.\n\nThe digital PDF version makes studying more convenient and flexible.Students can access the course material anytime without the trouble of carrying printed books. Each chapter is well organized to facilitate better learning, revision and preparation for assignments and examinations.\n\nThis digital book of Computer Science is very useful for regular study, revision of concepts, and preparation for exams throughout the academic year. Students can more conveniently have a quick review of important topics like computer systems, algorithms, programming basics, and information technology.',
     educationalPurpose:
       'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
     copyrightRespect:
@@ -360,7 +367,8 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       'Copyright holders may contact us to request removal, and we will respond promptly.',
     acknowledgement:
       'We appreciate the educators and authors who developed this educational resource.',
-    pdfUrl: DEFAULT_PDF,
+    pdfUrl: 'https://drive.google.com/uc?export=download&id=1YQNpbrn0gTJddb2mB7bAZJBiH8iqJ0cW',
+    previewUrl: 'https://drive.google.com/file/d/1YQNpbrn0gTJddb2mB7bAZJBiH8iqJ0cW/preview',
     quickAccess: {
       subject: 'Computer Science',
       className: '9th Class',
