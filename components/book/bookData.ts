@@ -386,12 +386,12 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
     className: '9th Class',
     cover: '/models/textures/ENG GRAMER.jpg',
     intro:
-      'Use the 9th class English Grammar textbook PDF to improve grammar, comprehension, and writing skills.',
+      'Download Class 9 English Grammar Textbook PDF for easy & effective digital learning. This book is meant to assist students to develop grammar, sentence structure, vocabulary ,and writing skills in a simple and systematic manner. A textbook is readily available online or can be downloaded as a full PDF for fast, convenient access whenever needed. This makes studying and revision more flexible without having to rely on physical books only.',
     description:
-      'This page offers the Class 9 English Grammar textbook in digital PDF format. Students can read it online or download it for practice and revision.\n\nIt is a convenient way to keep English study material available at all times.',
-    mainTopics: ['Parts of Speech', 'Tenses', 'Sentence Structure', 'Comprehension'],
+      'The 9th Class English Grammar book covers important language concepts clearly explained with practical examples and structured exercises. Students get to know about tenses, parts of speech, comprehension, essay writing, translation and gramar writing, that improve their communication skills. With the digital edition, students can keep learning comfortably from home or anywhere else using their mobile phones, tablets or computers.\n\nPDF format is a great resource for day to day practice, homework, classroom reviews and exam prep all year round. Students will be able to refer easily to the grammar rules, and use them more effectively in writing and comprehension exercises. The book’s well structured design helps the students to focus on important topics without any misunderstanding and helps to improve academic performance in English subjects.\n\nThis English Grammar book is really helpful for students who want to learn English in a way.The book combines all the chapters and exercises in one place for easy location of what student need. Get started with your studying. It helps students to prepare for school tests, board exams or just improve their English. The English Grammar book makes reading English easy for the students and boosts their confidence.',
+    mainTopics: ['Vocabulary','Writing an Essay', 'Forms of Verb', ' Tenses', 'Parts of Speech', 'Story Writing', 'Letters , Applications and Invitations	', 'Story Writing	', 'Dialogue Writing', 'Comprehension of a Passage', 'Paragraph Writing',],
     pctbCredit:
-      'This English Grammar resource follows the approved Punjab Curriculum and Textbook Board (PCTB) pattern.',
+      'This book follows the rules set by the Punjab Curriculum & Textbook Board (PCTB) which means it is used in schools, in Punjab. The goal of the English Grammar book is to help students understand grammar, reading, writing and speaking in a way that is easy to follow.\n\nDigital PDF edition makes it easier for students to learn. They have online access to the complete English Grammar textbook. This enables them to study, practice and revise any time. No need to carry printed books all the time.',
     educationalPurpose:
       'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
     copyrightRespect:
@@ -400,14 +400,17 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       'Rights holders can contact us for removal and we will handle the request responsibly.',
     acknowledgement:
       'We thank the authors and educators involved in preparing this learning resource.',
-    pdfUrl: DEFAULT_PDF,
+    pdfUrl:
+      'https://drive.google.com/uc?export=download&id=1SOthleP3bosiOobT5Zwbi0Ceq7J091pc',
+    previewUrl:
+      'https://drive.google.com/file/d/1SOthleP3bosiOobT5Zwbi0Ceq7J091pc/preview',
     quickAccess: {
       subject: 'English Grammar',
       className: '9th Class',
       medium: 'English Medium',
       board: 'Punjab Board',
       format: 'PDF',
-      fileSize: '54.6 MB',
+      fileSize: '52.2 MB',
       syllabus: '2025-2026',
     },
   },

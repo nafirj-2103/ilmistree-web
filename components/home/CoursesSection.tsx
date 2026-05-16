@@ -53,7 +53,7 @@ const courses: Course[] = [
   {
     id: 5,
     category: "New Syllabus",
-    title: "9 Urdu Qawaid-e-Insha T.Book PDF",
+    title: "9/10 Urdu Qawaid e Insha PDF",
     description: "Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly",
     cover: "/models/textures/INSHA.jpg",
     duration: "15 March 2026",
@@ -86,7 +86,7 @@ const courses: Course[] = [
   {
     id: 8,
     category: "New Syllabus",
-    title: "9 English Grammar Text Book PDF",
+    title: "9/10 English Grammar Book PDF",
     description: "Click View & Download To Access Your Digital PCTB 9 Class Text Book Instantly",
     cover: "/models/textures/ENG GRAMER.jpg",
     duration: "15 March 2026",

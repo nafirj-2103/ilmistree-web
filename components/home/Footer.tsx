@@ -32,11 +32,11 @@ export function Footer() {
     <footer className="w-full bg-[#81020c] text-white">
       {/* Keep footer attached to Contact; internal padding moves content down slightly */}
       <div className="max-w-7xl mx-auto px-[30px] pt-[80px] pb-[80px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-30">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-0">
           {/* Logo and Tagline */}
           <div>
             <div className="flex items-center gap-3 mb-4 mt-[-70px]">
-              <img src="/full_ilmistree_horizontal_glow-3c.png" alt="Ilmistree" className="h-25 w-50" />
+              <img src="/full_ilmistree_horizontal_glow-3c.png" alt="Ilmistree" className="h-24 w-48" />
             </div>
             <p className="text-white/80 leading-relaxed">
               {/*Where Knowledge Grows*/}
