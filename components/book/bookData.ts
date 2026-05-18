@@ -421,12 +421,12 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
     className: '9th Class',
     cover: '/models/textures/URDU.jpg',
     intro:
-      'Open and study the 9th class Urdu textbook in PDF format for poetry, prose, and language learning.',
+      'The 9th Class Urdu textbook is available in PDF format for simple study, fast learning, and accurate classroom support. Students can review major ideas at any time without carry any physical books thanks to this digital version, which can be downloaded or read online for convenient learning at home or on the go.',
     description:
-      'This page makes the Class 9 Urdu textbook available in digital PDF form. Students can use it for lesson study, revision, and regular reading.\n\nThis soft copy makes Urdu study more accessible and easy to manage.',
-    mainTopics: ['نظم', 'نثر', 'غزل', 'فہم و ادراک'],
+      'Easy learning of Urdu is now an experience. Get the Class Urdu Grammar Textbook, in PDF form.This digital textbook helps students to learn Urdu grammar, sentence structure, vocabulary, comprehension and writing skills in a way.\n\n* Students can read it online.\n\n* They can also download the PDF.\n\nThis way they can study, revise and prepare for exams easily.The 9th Class Urdu Grammar textbook is simple and well organised.It teaches parts of the Urdu language.These include sentence structure, comprehension, essay writing, translation and creative writing. Each chapter has examples and clear explanations.These help students understand Urdu better.They can also improve their writing skills.\n\nThe digital edition of the learning material is really helpful because students can use it at home at school or anywhere they want to on their phones, tablets or computers. This means that students have freedom to learn when they want to and it is easier for them to get to the learning material.The digital edition of the learning material gives students flexibility and it also gives them better access, to learning.\n\nThis PDF textbook is helpful for practice, homework, classroom revision, and preparing for board exams all year round.Students can quickly go over grammar rules and use them with confidence in writing and comprehension activities.The book is well-organized ,which helps learners focus on topics and understand Urdu language concepts better.The digital Urdu Grammar textbook is a learning resource for students who want to improve their Urdu language skills.All chapters, exercises ,and grammar concepts are in one place so students can study efficiently and save time.This textbook helps students learn with confidence ,whether they were preparing for school tests ,annual exams ,or improving their Urdu writing skills.',
+    mainTopics: ['Hamd','Naat	','Ikhlaq e Hasana','Apni Madad Aap	','Kaleem aur Mirza Zahir dar Baig','Naam Dev Mali	','Aram o Sukoon	','Katba	','Ibtidai Hisaab	','Larri me Piroye Hue Manzar','Bheriya	','Mehnat ki Barkaat	','Piyam e Lateef','Cricket aur Mushaira','Faqeeran Aae Sada Kar Chale	','Sun to Shi Jahan Me he Tera Fasana Kia	','Gham he Ya Khushi Tu','Kaash Tufan me Safeene ko Utara Hota (Ghazal)'],
     pctbCredit:
-      'This Urdu textbook is prepared in line with the Punjab Curriculum and Textbook Board (PCTB) syllabus.',
+      'This textbook is based on the syllabus approved by the Punjab Curriculum & Textbook Board (PCTB). It is widely used in schools across Punjab to help students improve their Urdu grammar, comprehension, writing ,and language skills.The digital edition helps learners study from home, school or any place using their phones, tablets or computers. This makes learning more flexible and accessible.The book uses an easy to understand approach, for learning. It makes learning simple.The digital PDF edition makes learning more flexible and accessible.Students can study, practice ,and revise anytime without relying on printed books.The simple explanations and organized content make this textbook a valuable resource for improving Urdu language learning throughout the year.',
     educationalPurpose:
       'Every piece of content on this page serves an educational purpose. The aim is to make sure students can study their Islamiat lessons without any hurdles, whether they are at home, in a library, or on the go.',
     copyrightRespect:
@@ -435,16 +435,16 @@ Grade 9 of the Tarjuma tul Quran Book contains all chapters, translation content
       'If the rightful owner requests removal, we will review and remove the content quickly.',
     acknowledgement:
       'We appreciate the work of the educators and authors who created this textbook.',
-    pdfUrl: DEFAULT_PDF,
+    pdfUrl: 'https://drive.google.com/uc?export=download&id=1JPgnI_hL6D0EMPG36IdjcqB2OFBHLp52',
+    previewUrl: 'https://drive.google.com/file/d/1JPgnI_hL6D0EMPG36IdjcqB2OFBHLp52/preview',
     quickAccess: {
       subject: 'Urdu',
       className: '9th Class',
       medium: 'Urdu Medium',
       board: 'Punjab Board',
       format: 'PDF',
-      fileSize: '54.6 MB',
+      fileSize: '9.76 MB',
       syllabus: '2025-2026',
     },
   },
 };
-
