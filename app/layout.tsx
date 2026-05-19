@@ -1,6 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import Script from 'next/script'
+
+const GA_MEASUREMENT_ID = 'G-ZY7ZH9HBGT'
 
 const godber = localFont({
   src: './fonts/godber.ttf',
@@ -30,6 +33,19 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${godber.variable} ${milkAndHoney.variable} min-h-screen pt-[73px]`}>
         {children}
+        <Script
+          id="google-analytics"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   )
