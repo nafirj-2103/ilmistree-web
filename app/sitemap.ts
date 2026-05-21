@@ -38,5 +38,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://ilmistree.com/book/9th-class-turjuma-tul-quran',
       lastModified: new Date(),
     },
+    {
+      url: 'https://ilmistree.com/book/9th-class-urdu',
+      lastModified: new Date(),
+    },
   ]
 }
